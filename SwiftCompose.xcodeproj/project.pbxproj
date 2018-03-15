@@ -29,6 +29,8 @@
 		D3EAEDD7205AE5350033CF62 /* ComposableTest+Multiple.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EAEDD6205AE5350033CF62 /* ComposableTest+Multiple.swift */; };
 		D3EAEDD9205AE5570033CF62 /* ComposableTest+Async.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EAEDD8205AE5570033CF62 /* ComposableTest+Async.swift */; };
 		D3EAEDDB205AE8800033CF62 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = D3EAEDDA205AE8800033CF62 /* README.md */; };
+		D3EAEDDD205AEF4C0033CF62 /* Composable+Zip.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EAEDDC205AEF4C0033CF62 /* Composable+Zip.swift */; };
+		D3EAEDDF205AF0AB0033CF62 /* ComposableTest+Zip.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EAEDDE205AF0AB0033CF62 /* ComposableTest+Zip.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +73,8 @@
 		D3EAEDD6205AE5350033CF62 /* ComposableTest+Multiple.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ComposableTest+Multiple.swift"; sourceTree = "<group>"; };
 		D3EAEDD8205AE5570033CF62 /* ComposableTest+Async.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ComposableTest+Async.swift"; sourceTree = "<group>"; };
 		D3EAEDDA205AE8800033CF62 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		D3EAEDDC205AEF4C0033CF62 /* Composable+Zip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Composable+Zip.swift"; sourceTree = "<group>"; };
+		D3EAEDDE205AF0AB0033CF62 /* ComposableTest+Zip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ComposableTest+Zip.swift"; sourceTree = "<group>"; };
 		D9843BCDE0ACA26AD380790A /* Pods-SwiftCompose.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftCompose.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftCompose/Pods-SwiftCompose.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -149,6 +153,7 @@
 				D3EAEDBB205AE23C0033CF62 /* Composable+Timeout.swift */,
 				D3EAEDA1205AE0B20033CF62 /* Info.plist */,
 				D3EAEDA0205AE0B20033CF62 /* SwiftCompose.h */,
+				D3EAEDDC205AEF4C0033CF62 /* Composable+Zip.swift */,
 			);
 			path = SwiftCompose;
 			sourceTree = "<group>";
@@ -167,6 +172,7 @@
 				D3EAEDCE205AE4430033CF62 /* ComposableTest+Timeout.swift */,
 				D3EAEDAD205AE0B20033CF62 /* Info.plist */,
 				D3EAEDC7205AE24A0033CF62 /* SwiftComposeTests-Bridging-Header.h */,
+				D3EAEDDE205AF0AB0033CF62 /* ComposableTest+Zip.swift */,
 			);
 			path = SwiftComposeTests;
 			sourceTree = "<group>";
@@ -376,6 +382,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3EAEDDD205AEF4C0033CF62 /* Composable+Zip.swift in Sources */,
 				D3EAEDC6205AE23D0033CF62 /* Composable.swift in Sources */,
 				D3EAEDC0205AE23D0033CF62 /* Composable+Noop.swift in Sources */,
 				D3EAEDC4205AE23D0033CF62 /* Composable+Retry.swift in Sources */,
@@ -397,6 +404,7 @@
 				D3EAEDCD205AE4210033CF62 /* ComposableTest+Publish.swift in Sources */,
 				D3EAEDCF205AE4440033CF62 /* ComposableTest+Timeout.swift in Sources */,
 				D3EAEDD7205AE5350033CF62 /* ComposableTest+Multiple.swift in Sources */,
+				D3EAEDDF205AF0AB0033CF62 /* ComposableTest+Zip.swift in Sources */,
 				D3EAEDCB205AE3EB0033CF62 /* ComposableTest+Retry.swift in Sources */,
 				D3EAEDD5205AE50C0033CF62 /* ComposableTest+Map.swift in Sources */,
 				D3EAEDD3205AE4CE0033CF62 /* ComposableTest+Sync.swift in Sources */,

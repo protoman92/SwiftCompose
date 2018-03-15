@@ -29,10 +29,8 @@ public extension ComposableTest {
             expect.fulfill()
         })
         
-        let composed3 = composed2({fatalError()})
-        
         /// When
-        composed3(dispatchQueue)(fInt)
+        composed2(dispatchQueue)(fInt)
         waitForExpectations(timeout: expectTimeout, handler: nil)
         
         /// Then

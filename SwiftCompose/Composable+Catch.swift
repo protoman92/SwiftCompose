@@ -7,6 +7,7 @@
 //
 
 public extension Composable {
+    
     /// Catch the error and supply a different value.
     ///
     /// - Parameter c: A Error transform function.

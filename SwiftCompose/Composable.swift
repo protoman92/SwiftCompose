@@ -37,23 +37,19 @@ public struct Composable<T> {
     /// - Throws: If the operation fails.
     public func invokeAsync(_ onNext: @escaping (T) throws -> Void)
         -> (@escaping (Error) -> Void)
-        -> (@escaping () throws -> Void)
         -> (DispatchQueue)
         -> (@escaping Supplier<T>)
         -> Void
     {
         return {(onError: @escaping (Error) -> Void) in
-            return {(onComplete: @escaping () throws -> Void) in
-                return {(dq: DispatchQueue) in
-                    return {(s: @escaping Supplier<T>) in
-                        dq.async {
-                            do {
-                                let value = try self.invoke(s)()
-                                try onNext(value)
-                                try onComplete()
-                            } catch let e {
-                                onError(e)
-                            }
+            return {(dq: DispatchQueue) in
+                return {(s: @escaping Supplier<T>) in
+                    dq.async {
+                        do {
+                            let value = try self.invoke(s)()
+                            try onNext(value)
+                        } catch let e {
+                            onError(e)
                         }
                     }
                 }
