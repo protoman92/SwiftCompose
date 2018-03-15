@@ -1,0 +1,21 @@
+PODS:
+  - SwiftFP/Main (1.0.0)
+
+DEPENDENCIES:
+  - SwiftFP/Main (from `https://github.com/protoman92/SwiftFP.git`)
+
+EXTERNAL SOURCES:
+  SwiftFP:
+    :git: https://github.com/protoman92/SwiftFP.git
+
+CHECKOUT OPTIONS:
+  SwiftFP:
+    :commit: f2febf4fd94d4fcc2764eb8f1285d1871088f73f
+    :git: https://github.com/protoman92/SwiftFP.git
+
+SPEC CHECKSUMS:
+  SwiftFP: 7ce3b2b2fb3c85d6195fd50cb1d873dcf82ae50e
+
+PODFILE CHECKSUM: e278c04a01f5a6af290d8a83820317242307aa04
+
+COCOAPODS: 1.4.0

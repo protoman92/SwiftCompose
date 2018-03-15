@@ -1,0 +1,655 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0704FCD67542B338A29B40AF /* Pods_SwiftComposeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA82CDD04C43325CDB7A57DC /* Pods_SwiftComposeTests.framework */; };
+		53ECE44662FA389AF6E60DD5 /* Pods_SwiftCompose.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C14790471E4B34796705F38 /* Pods_SwiftCompose.framework */; };
+		D3EAEDA7205AE0B20033CF62 /* SwiftCompose.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3EAED9D205AE0B20033CF62 /* SwiftCompose.framework */; };
+		D3EAEDAE205AE0B20033CF62 /* SwiftCompose.h in Headers */ = {isa = PBXBuildFile; fileRef = D3EAEDA0205AE0B20033CF62 /* SwiftCompose.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D3EAEDBF205AE23D0033CF62 /* Composable+Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EAEDB7205AE23C0033CF62 /* Composable+Map.swift */; };
+		D3EAEDC0205AE23D0033CF62 /* Composable+Noop.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EAEDB8205AE23C0033CF62 /* Composable+Noop.swift */; };
+		D3EAEDC1205AE23D0033CF62 /* Composable+Publish.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EAEDB9205AE23C0033CF62 /* Composable+Publish.swift */; };
+		D3EAEDC2205AE23D0033CF62 /* Composable+Sync.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EAEDBA205AE23C0033CF62 /* Composable+Sync.swift */; };
+		D3EAEDC3205AE23D0033CF62 /* Composable+Timeout.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EAEDBB205AE23C0033CF62 /* Composable+Timeout.swift */; };
+		D3EAEDC4205AE23D0033CF62 /* Composable+Retry.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EAEDBC205AE23C0033CF62 /* Composable+Retry.swift */; };
+		D3EAEDC5205AE23D0033CF62 /* Composable+Catch.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EAEDBD205AE23C0033CF62 /* Composable+Catch.swift */; };
+		D3EAEDC6205AE23D0033CF62 /* Composable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EAEDBE205AE23C0033CF62 /* Composable.swift */; };
+		D3EAEDC9205AE24A0033CF62 /* ComposableTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EAEDC8205AE24A0033CF62 /* ComposableTest.swift */; };
+		D3EAEDCB205AE3EB0033CF62 /* ComposableTest+Retry.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EAEDCA205AE3EB0033CF62 /* ComposableTest+Retry.swift */; };
+		D3EAEDCD205AE4210033CF62 /* ComposableTest+Publish.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EAEDCC205AE4210033CF62 /* ComposableTest+Publish.swift */; };
+		D3EAEDCF205AE4440033CF62 /* ComposableTest+Timeout.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EAEDCE205AE4430033CF62 /* ComposableTest+Timeout.swift */; };
+		D3EAEDD1205AE4900033CF62 /* ComposableTest+Catch.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EAEDD0205AE4900033CF62 /* ComposableTest+Catch.swift */; };
+		D3EAEDD3205AE4CE0033CF62 /* ComposableTest+Sync.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EAEDD2205AE4CE0033CF62 /* ComposableTest+Sync.swift */; };
+		D3EAEDD5205AE50C0033CF62 /* ComposableTest+Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EAEDD4205AE50C0033CF62 /* ComposableTest+Map.swift */; };
+		D3EAEDD7205AE5350033CF62 /* ComposableTest+Multiple.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EAEDD6205AE5350033CF62 /* ComposableTest+Multiple.swift */; };
+		D3EAEDD9205AE5570033CF62 /* ComposableTest+Async.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EAEDD8205AE5570033CF62 /* ComposableTest+Async.swift */; };
+		D3EAEDDB205AE8800033CF62 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = D3EAEDDA205AE8800033CF62 /* README.md */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D3EAEDA8205AE0B20033CF62 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D3EAED94205AE0B20033CF62 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D3EAED9C205AE0B20033CF62;
+			remoteInfo = SwiftCompose;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		35BD77A33A56BBBB13C62476 /* Pods-SwiftCompose.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftCompose.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftCompose/Pods-SwiftCompose.debug.xcconfig"; sourceTree = "<group>"; };
+		38526E72773A9B3C34B01004 /* Pods-SwiftComposeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftComposeTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftComposeTests/Pods-SwiftComposeTests.debug.xcconfig"; sourceTree = "<group>"; };
+		667D3D86FC74C9406ED5BA87 /* Pods-SwiftComposeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftComposeTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftComposeTests/Pods-SwiftComposeTests.release.xcconfig"; sourceTree = "<group>"; };
+		7C14790471E4B34796705F38 /* Pods_SwiftCompose.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftCompose.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA82CDD04C43325CDB7A57DC /* Pods_SwiftComposeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftComposeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D3EAED9D205AE0B20033CF62 /* SwiftCompose.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftCompose.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D3EAEDA0205AE0B20033CF62 /* SwiftCompose.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftCompose.h; sourceTree = "<group>"; };
+		D3EAEDA1205AE0B20033CF62 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D3EAEDA6205AE0B20033CF62 /* SwiftComposeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftComposeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D3EAEDAD205AE0B20033CF62 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D3EAEDB7205AE23C0033CF62 /* Composable+Map.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Composable+Map.swift"; sourceTree = "<group>"; };
+		D3EAEDB8205AE23C0033CF62 /* Composable+Noop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Composable+Noop.swift"; sourceTree = "<group>"; };
+		D3EAEDB9205AE23C0033CF62 /* Composable+Publish.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Composable+Publish.swift"; sourceTree = "<group>"; };
+		D3EAEDBA205AE23C0033CF62 /* Composable+Sync.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Composable+Sync.swift"; sourceTree = "<group>"; };
+		D3EAEDBB205AE23C0033CF62 /* Composable+Timeout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Composable+Timeout.swift"; sourceTree = "<group>"; };
+		D3EAEDBC205AE23C0033CF62 /* Composable+Retry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Composable+Retry.swift"; sourceTree = "<group>"; };
+		D3EAEDBD205AE23C0033CF62 /* Composable+Catch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Composable+Catch.swift"; sourceTree = "<group>"; };
+		D3EAEDBE205AE23C0033CF62 /* Composable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Composable.swift; sourceTree = "<group>"; };
+		D3EAEDC7205AE24A0033CF62 /* SwiftComposeTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SwiftComposeTests-Bridging-Header.h"; sourceTree = "<group>"; };
+		D3EAEDC8205AE24A0033CF62 /* ComposableTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComposableTest.swift; sourceTree = "<group>"; };
+		D3EAEDCA205AE3EB0033CF62 /* ComposableTest+Retry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ComposableTest+Retry.swift"; sourceTree = "<group>"; };
+		D3EAEDCC205AE4210033CF62 /* ComposableTest+Publish.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ComposableTest+Publish.swift"; sourceTree = "<group>"; };
+		D3EAEDCE205AE4430033CF62 /* ComposableTest+Timeout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ComposableTest+Timeout.swift"; sourceTree = "<group>"; };
+		D3EAEDD0205AE4900033CF62 /* ComposableTest+Catch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ComposableTest+Catch.swift"; sourceTree = "<group>"; };
+		D3EAEDD2205AE4CE0033CF62 /* ComposableTest+Sync.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ComposableTest+Sync.swift"; sourceTree = "<group>"; };
+		D3EAEDD4205AE50C0033CF62 /* ComposableTest+Map.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ComposableTest+Map.swift"; sourceTree = "<group>"; };
+		D3EAEDD6205AE5350033CF62 /* ComposableTest+Multiple.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ComposableTest+Multiple.swift"; sourceTree = "<group>"; };
+		D3EAEDD8205AE5570033CF62 /* ComposableTest+Async.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ComposableTest+Async.swift"; sourceTree = "<group>"; };
+		D3EAEDDA205AE8800033CF62 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		D9843BCDE0ACA26AD380790A /* Pods-SwiftCompose.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftCompose.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftCompose/Pods-SwiftCompose.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D3EAED99205AE0B20033CF62 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				53ECE44662FA389AF6E60DD5 /* Pods_SwiftCompose.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D3EAEDA3205AE0B20033CF62 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D3EAEDA7205AE0B20033CF62 /* SwiftCompose.framework in Frameworks */,
+				0704FCD67542B338A29B40AF /* Pods_SwiftComposeTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		296242C251154AFF2BA824D3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				35BD77A33A56BBBB13C62476 /* Pods-SwiftCompose.debug.xcconfig */,
+				D9843BCDE0ACA26AD380790A /* Pods-SwiftCompose.release.xcconfig */,
+				38526E72773A9B3C34B01004 /* Pods-SwiftComposeTests.debug.xcconfig */,
+				667D3D86FC74C9406ED5BA87 /* Pods-SwiftComposeTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		319D28C2CCB8CD43192D8BE0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7C14790471E4B34796705F38 /* Pods_SwiftCompose.framework */,
+				AA82CDD04C43325CDB7A57DC /* Pods_SwiftComposeTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D3EAED93205AE0B20033CF62 = {
+			isa = PBXGroup;
+			children = (
+				D3EAEDDA205AE8800033CF62 /* README.md */,
+				319D28C2CCB8CD43192D8BE0 /* Frameworks */,
+				296242C251154AFF2BA824D3 /* Pods */,
+				D3EAED9E205AE0B20033CF62 /* Products */,
+				D3EAED9F205AE0B20033CF62 /* SwiftCompose */,
+				D3EAEDAA205AE0B20033CF62 /* SwiftComposeTests */,
+			);
+			sourceTree = "<group>";
+		};
+		D3EAED9E205AE0B20033CF62 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D3EAED9D205AE0B20033CF62 /* SwiftCompose.framework */,
+				D3EAEDA6205AE0B20033CF62 /* SwiftComposeTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D3EAED9F205AE0B20033CF62 /* SwiftCompose */ = {
+			isa = PBXGroup;
+			children = (
+				D3EAEDBE205AE23C0033CF62 /* Composable.swift */,
+				D3EAEDBD205AE23C0033CF62 /* Composable+Catch.swift */,
+				D3EAEDB7205AE23C0033CF62 /* Composable+Map.swift */,
+				D3EAEDB8205AE23C0033CF62 /* Composable+Noop.swift */,
+				D3EAEDB9205AE23C0033CF62 /* Composable+Publish.swift */,
+				D3EAEDBC205AE23C0033CF62 /* Composable+Retry.swift */,
+				D3EAEDBA205AE23C0033CF62 /* Composable+Sync.swift */,
+				D3EAEDBB205AE23C0033CF62 /* Composable+Timeout.swift */,
+				D3EAEDA1205AE0B20033CF62 /* Info.plist */,
+				D3EAEDA0205AE0B20033CF62 /* SwiftCompose.h */,
+			);
+			path = SwiftCompose;
+			sourceTree = "<group>";
+		};
+		D3EAEDAA205AE0B20033CF62 /* SwiftComposeTests */ = {
+			isa = PBXGroup;
+			children = (
+				D3EAEDC8205AE24A0033CF62 /* ComposableTest.swift */,
+				D3EAEDD8205AE5570033CF62 /* ComposableTest+Async.swift */,
+				D3EAEDD0205AE4900033CF62 /* ComposableTest+Catch.swift */,
+				D3EAEDD4205AE50C0033CF62 /* ComposableTest+Map.swift */,
+				D3EAEDD6205AE5350033CF62 /* ComposableTest+Multiple.swift */,
+				D3EAEDCC205AE4210033CF62 /* ComposableTest+Publish.swift */,
+				D3EAEDCA205AE3EB0033CF62 /* ComposableTest+Retry.swift */,
+				D3EAEDD2205AE4CE0033CF62 /* ComposableTest+Sync.swift */,
+				D3EAEDCE205AE4430033CF62 /* ComposableTest+Timeout.swift */,
+				D3EAEDAD205AE0B20033CF62 /* Info.plist */,
+				D3EAEDC7205AE24A0033CF62 /* SwiftComposeTests-Bridging-Header.h */,
+			);
+			path = SwiftComposeTests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		D3EAED9A205AE0B20033CF62 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D3EAEDAE205AE0B20033CF62 /* SwiftCompose.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		D3EAED9C205AE0B20033CF62 /* SwiftCompose */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D3EAEDB1205AE0B20033CF62 /* Build configuration list for PBXNativeTarget "SwiftCompose" */;
+			buildPhases = (
+				5FDB45F6C964F5DC778625F7 /* [CP] Check Pods Manifest.lock */,
+				D3EAED98205AE0B20033CF62 /* Sources */,
+				D3EAED99205AE0B20033CF62 /* Frameworks */,
+				D3EAED9A205AE0B20033CF62 /* Headers */,
+				D3EAED9B205AE0B20033CF62 /* Resources */,
+				7FC0106F5AFB322647FADDEA /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SwiftCompose;
+			productName = SwiftCompose;
+			productReference = D3EAED9D205AE0B20033CF62 /* SwiftCompose.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		D3EAEDA5205AE0B20033CF62 /* SwiftComposeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D3EAEDB4205AE0B20033CF62 /* Build configuration list for PBXNativeTarget "SwiftComposeTests" */;
+			buildPhases = (
+				A65D7E2888FB5276A2C73A1B /* [CP] Check Pods Manifest.lock */,
+				D3EAEDA2205AE0B20033CF62 /* Sources */,
+				D3EAEDA3205AE0B20033CF62 /* Frameworks */,
+				D3EAEDA4205AE0B20033CF62 /* Resources */,
+				C9711EE3C4D3EBD7BC61C7C8 /* [CP] Embed Pods Frameworks */,
+				F936EE26BE4D9D83B4945277 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D3EAEDA9205AE0B20033CF62 /* PBXTargetDependency */,
+			);
+			name = SwiftComposeTests;
+			productName = SwiftComposeTests;
+			productReference = D3EAEDA6205AE0B20033CF62 /* SwiftComposeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D3EAED94205AE0B20033CF62 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0920;
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = "Hai Pham";
+				TargetAttributes = {
+					D3EAED9C205AE0B20033CF62 = {
+						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 0920;
+						ProvisioningStyle = Automatic;
+					};
+					D3EAEDA5205AE0B20033CF62 = {
+						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 0920;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = D3EAED97205AE0B20033CF62 /* Build configuration list for PBXProject "SwiftCompose" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = D3EAED93205AE0B20033CF62;
+			productRefGroup = D3EAED9E205AE0B20033CF62 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D3EAED9C205AE0B20033CF62 /* SwiftCompose */,
+				D3EAEDA5205AE0B20033CF62 /* SwiftComposeTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D3EAED9B205AE0B20033CF62 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D3EAEDA4205AE0B20033CF62 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D3EAEDDB205AE8800033CF62 /* README.md in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5FDB45F6C964F5DC778625F7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SwiftCompose-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7FC0106F5AFB322647FADDEA /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SwiftCompose/Pods-SwiftCompose-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A65D7E2888FB5276A2C73A1B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SwiftComposeTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C9711EE3C4D3EBD7BC61C7C8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-SwiftComposeTests/Pods-SwiftComposeTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/SwiftFP/SwiftFP.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftFP.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SwiftComposeTests/Pods-SwiftComposeTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F936EE26BE4D9D83B4945277 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SwiftComposeTests/Pods-SwiftComposeTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D3EAED98205AE0B20033CF62 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D3EAEDC6205AE23D0033CF62 /* Composable.swift in Sources */,
+				D3EAEDC0205AE23D0033CF62 /* Composable+Noop.swift in Sources */,
+				D3EAEDC4205AE23D0033CF62 /* Composable+Retry.swift in Sources */,
+				D3EAEDC5205AE23D0033CF62 /* Composable+Catch.swift in Sources */,
+				D3EAEDC2205AE23D0033CF62 /* Composable+Sync.swift in Sources */,
+				D3EAEDC1205AE23D0033CF62 /* Composable+Publish.swift in Sources */,
+				D3EAEDBF205AE23D0033CF62 /* Composable+Map.swift in Sources */,
+				D3EAEDC3205AE23D0033CF62 /* Composable+Timeout.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D3EAEDA2205AE0B20033CF62 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D3EAEDC9205AE24A0033CF62 /* ComposableTest.swift in Sources */,
+				D3EAEDD1205AE4900033CF62 /* ComposableTest+Catch.swift in Sources */,
+				D3EAEDD9205AE5570033CF62 /* ComposableTest+Async.swift in Sources */,
+				D3EAEDCD205AE4210033CF62 /* ComposableTest+Publish.swift in Sources */,
+				D3EAEDCF205AE4440033CF62 /* ComposableTest+Timeout.swift in Sources */,
+				D3EAEDD7205AE5350033CF62 /* ComposableTest+Multiple.swift in Sources */,
+				D3EAEDCB205AE3EB0033CF62 /* ComposableTest+Retry.swift in Sources */,
+				D3EAEDD5205AE50C0033CF62 /* ComposableTest+Map.swift in Sources */,
+				D3EAEDD3205AE4CE0033CF62 /* ComposableTest+Sync.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D3EAEDA9205AE0B20033CF62 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D3EAED9C205AE0B20033CF62 /* SwiftCompose */;
+			targetProxy = D3EAEDA8205AE0B20033CF62 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		D3EAEDAF205AE0B20033CF62 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		D3EAEDB0205AE0B20033CF62 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		D3EAEDB2205AE0B20033CF62 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 35BD77A33A56BBBB13C62476 /* Pods-SwiftCompose.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 5FF785XRZ6;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
+				INFOPLIST_FILE = SwiftCompose/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = org.swiften.SwiftCompose;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D3EAEDB3205AE0B20033CF62 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D9843BCDE0ACA26AD380790A /* Pods-SwiftCompose.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 5FF785XRZ6;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
+				INFOPLIST_FILE = SwiftCompose/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = org.swiften.SwiftCompose;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		D3EAEDB5205AE0B20033CF62 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 38526E72773A9B3C34B01004 /* Pods-SwiftComposeTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5FF785XRZ6;
+				INFOPLIST_FILE = SwiftComposeTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = org.swiften.SwiftComposeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SwiftComposeTests/SwiftComposeTests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D3EAEDB6205AE0B20033CF62 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 667D3D86FC74C9406ED5BA87 /* Pods-SwiftComposeTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5FF785XRZ6;
+				INFOPLIST_FILE = SwiftComposeTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = org.swiften.SwiftComposeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SwiftComposeTests/SwiftComposeTests-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D3EAED97205AE0B20033CF62 /* Build configuration list for PBXProject "SwiftCompose" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D3EAEDAF205AE0B20033CF62 /* Debug */,
+				D3EAEDB0205AE0B20033CF62 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D3EAEDB1205AE0B20033CF62 /* Build configuration list for PBXNativeTarget "SwiftCompose" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D3EAEDB2205AE0B20033CF62 /* Debug */,
+				D3EAEDB3205AE0B20033CF62 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D3EAEDB4205AE0B20033CF62 /* Build configuration list for PBXNativeTarget "SwiftComposeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D3EAEDB5205AE0B20033CF62 /* Debug */,
+				D3EAEDB6205AE0B20033CF62 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D3EAED94205AE0B20033CF62 /* Project object */;
+}
