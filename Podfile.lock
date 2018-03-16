@@ -10,7 +10,7 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   SwiftFP:
-    :commit: f2febf4fd94d4fcc2764eb8f1285d1871088f73f
+    :commit: 9eccc4ed2f1e8f367eefb222ceaf5bf66be91665
     :git: https://github.com/protoman92/SwiftFP.git
 
 SPEC CHECKSUMS:
