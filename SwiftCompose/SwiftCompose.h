@@ -15,5 +15,3 @@ FOUNDATION_EXPORT double SwiftComposeVersionNumber;
 FOUNDATION_EXPORT const unsigned char SwiftComposeVersionString[];
 
 // In this header, you should import all the public headers of your framework using statements like #import <SwiftCompose/PublicHeader.h>
-
-

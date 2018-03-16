@@ -10,14 +10,14 @@ import XCTest
 @testable import SwiftCompose
 
 public extension ComposableTest {
-    public func test_composeMap_shouldWork() {
-        /// Setup
-        let fInt: Supplier<Int> = {1}
-        
-        /// When
-        let result = try? Composable.map({$0 * 2}).invoke(fInt)()
-        
-        /// Then
-        XCTAssertEqual(result, 2)
-    }
+  public func test_composeMap_shouldWork() {
+    /// Setup
+    let fInt: Supplier<Int> = {1}
+
+    /// When
+    let result = try? Composable.map({$0 * 2}).wrap(fInt)()
+
+    /// Then
+    XCTAssertEqual(result, 2)
+  }
 }

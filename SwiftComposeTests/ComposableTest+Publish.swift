@@ -10,26 +10,26 @@ import XCTest
 @testable import SwiftCompose
 
 public extension ComposableTest {
-    public func test_composePublish_shouldWork() {
-        /// Setup
-        var published = 0
-        var publishedValue = 0
-        let value = 1
-        let fInt: Supplier<Int> = {value}
-        
-        let publishF: (Int) -> Void = {
-            published += 1
-            publishedValue = $0
-        }
-        
-        let publishC = Composable.publish(publishF)
-        
-        /// When
-        let result = try! publishC.invoke(fInt)()
-        
-        /// Then
-        XCTAssertEqual(result, value)
-        XCTAssertEqual(publishedValue, value)
-        XCTAssertEqual(published, 1)
+  public func test_composePublish_shouldWork() {
+    /// Setup
+    var published = 0
+    var publishedValue = 0
+    let value = 1
+    let fInt: Supplier<Int> = {value}
+
+    let publishF: (Int) -> Void = {
+      published += 1
+      publishedValue = $0
     }
+
+    let publishC = Composable.publish(publishF)
+
+    /// When
+    let result = try! publishC.wrap(fInt)()
+
+    /// Then
+    XCTAssertEqual(result, value)
+    XCTAssertEqual(publishedValue, value)
+    XCTAssertEqual(published, 1)
+  }
 }

@@ -7,11 +7,11 @@
 //
 
 public extension Composable {
-    
-    /// Noop does nothing an simply returns whatever is passed in.
-    ///
-    /// - Returns: A SupplierF instance.
-    public static func noop() -> SupplierF<T> {
-        return {$0}
-    }
+
+	/// Noop does nothing an simply returns whatever is passed in.
+	///
+	/// - Returns: A SupplierF instance.
+	public static func noop() -> SupplierF<T> {
+		return {$0}
+	}
 }

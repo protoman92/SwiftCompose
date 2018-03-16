@@ -10,18 +10,34 @@ Composable functions for Swift. This library may help those who aren't exactly c
     throw Exception("Invalid")
   }
 
+  func someAsyncFunction(_ callback: (Try<Int>) -> Void) {
+    DispatchQueue.global(.background).async {
+      callback(Try.failure("Unavailable"))
+    }
+  }
+
   func main() {
     let composed = Compose<Int>.publish({print($0)})
       .compose(Compose.publishError({print($0)}))
       .compose(Compose.retryWithDelay(10)(0.5))
+      .compose(Compose.timeout(0.5)(DispatchQueue.global(.background))
+      .compose(Compose.map({$0 * 2}))
       .compose(Compose.noop())
 
     /// Now we have a higher-order function that accepts a function as parameter
     /// and transform it into another that has the specified traits.
     ///
-    /// The code below will be retried up to 10 times, with a delay between each
-    /// two consecutive set of retries. We also publish the value/error.
+    /// The code below will be retried up to 10 times, with a delay between
+    /// each two consecutive set of retries. We also publish the value/error.
     try? composed.invoke(someFunction)()
+
+    /// Or synchronize an async function and access its results on the same
+    /// queue.
+    try? composed.wrap(Composable.sync(someAsyncFunction))()
+
+    /// Or invoke asynchronously.
+    let onNext = composed.wrapAsync({(v: Try<Int>) in print(v)})
+    onNext(DispatchQueue.global(.background))(someFunction)()
   }
 ```
 

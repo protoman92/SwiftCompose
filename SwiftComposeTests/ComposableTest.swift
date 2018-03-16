@@ -11,12 +11,12 @@ import XCTest
 @testable import SwiftCompose
 
 public final class ComposableTest: XCTestCase {
-    public var expectTimeout: TimeInterval!
-    public var retryCount: Int!
-    
-    override public func setUp() {
-        super.setUp()
-        expectTimeout = 10
-        retryCount = 10000
-    }
+	public var expectTimeout: TimeInterval!
+	public var retryCount: Int!
+
+	override public func setUp() {
+		super.setUp()
+		expectTimeout = 10
+		retryCount = 100000
+	}
 }

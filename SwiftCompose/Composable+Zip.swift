@@ -7,30 +7,23 @@
 //
 
 public extension Composable {
-    
-    /// Zip the results of a Sequence of Suppliers with the value returned by
-    /// the invoked Supplier.
-    ///
-    /// - Parameter z: Zipper function.
-    /// - Returns: A custom higher-order function.
-    public static func zip(_ z: @escaping ([T]) throws -> T) -> ([Supplier<T>]) -> Composable<T> {
-        return {(ss: [Supplier<T>]) in
-            let sf: SupplierF<T> = {(s: @escaping Supplier<T>) in
-                var newSf = ss
-                newSf.append(s)
-                return {try z(newSf.map({try $0()}))}
-            }
-            
-            return Composable(sf)
-        }
-    }
-    
-    /// This is similar to zip, but the arguments in the curried function are
-    /// variadic.
-    ///
-    /// - Parameter z: Zipper function.
-    /// - Returns: A custom higher-order function.
-    public static func zipVarargs(_ z: @escaping ([T]) throws -> T) -> (Supplier<T>...) -> Composable<T> {
-        return {(ss: Supplier<T>...) in zip(z)(ss.map({$0}))}
-    }
+
+	/// Zip the results of a Sequence of Suppliers.
+	///
+	/// - Parameter z: Zipper function.
+	/// - Returns: A custom higher-order function.
+	public static func zip(_ z: @escaping ([T]) throws -> T) -> ([Supplier<T>]) -> Supplier<T> {
+		return {(ss: [Supplier<T>]) in
+			return {try z(ss.map({try $0()}))}
+		}
+	}
+
+	/// This is similar to zip, but the arguments in the curried function are
+	/// variadic.
+	///
+	/// - Parameter z: Zipper function.
+	/// - Returns: A custom higher-order function.
+	public static func zipVarargs(_ z: @escaping ([T]) throws -> T) -> (Supplier<T>...) -> Supplier<T> {
+		return {(ss: Supplier<T>...) in zip(z)(ss.map({$0}))}
+	}
 }

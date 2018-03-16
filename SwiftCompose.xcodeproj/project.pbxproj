@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0704FCD67542B338A29B40AF /* Pods_SwiftComposeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA82CDD04C43325CDB7A57DC /* Pods_SwiftComposeTests.framework */; };
 		53ECE44662FA389AF6E60DD5 /* Pods_SwiftCompose.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C14790471E4B34796705F38 /* Pods_SwiftCompose.framework */; };
+		D315FE88205B687A0050CED0 /* Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = D315FE87205B687A0050CED0 /* Types.swift */; };
 		D3EAEDA7205AE0B20033CF62 /* SwiftCompose.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3EAED9D205AE0B20033CF62 /* SwiftCompose.framework */; };
 		D3EAEDAE205AE0B20033CF62 /* SwiftCompose.h in Headers */ = {isa = PBXBuildFile; fileRef = D3EAEDA0205AE0B20033CF62 /* SwiftCompose.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D3EAEDBF205AE23D0033CF62 /* Composable+Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EAEDB7205AE23C0033CF62 /* Composable+Map.swift */; };
@@ -49,6 +50,7 @@
 		667D3D86FC74C9406ED5BA87 /* Pods-SwiftComposeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftComposeTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftComposeTests/Pods-SwiftComposeTests.release.xcconfig"; sourceTree = "<group>"; };
 		7C14790471E4B34796705F38 /* Pods_SwiftCompose.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftCompose.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA82CDD04C43325CDB7A57DC /* Pods_SwiftComposeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftComposeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D315FE87205B687A0050CED0 /* Types.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Types.swift; sourceTree = "<group>"; };
 		D3EAED9D205AE0B20033CF62 /* SwiftCompose.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftCompose.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3EAEDA0205AE0B20033CF62 /* SwiftCompose.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftCompose.h; sourceTree = "<group>"; };
 		D3EAEDA1205AE0B20033CF62 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -151,9 +153,10 @@
 				D3EAEDBC205AE23C0033CF62 /* Composable+Retry.swift */,
 				D3EAEDBA205AE23C0033CF62 /* Composable+Sync.swift */,
 				D3EAEDBB205AE23C0033CF62 /* Composable+Timeout.swift */,
+				D3EAEDDC205AEF4C0033CF62 /* Composable+Zip.swift */,
 				D3EAEDA1205AE0B20033CF62 /* Info.plist */,
 				D3EAEDA0205AE0B20033CF62 /* SwiftCompose.h */,
-				D3EAEDDC205AEF4C0033CF62 /* Composable+Zip.swift */,
+				D315FE87205B687A0050CED0 /* Types.swift */,
 			);
 			path = SwiftCompose;
 			sourceTree = "<group>";
@@ -170,9 +173,9 @@
 				D3EAEDCA205AE3EB0033CF62 /* ComposableTest+Retry.swift */,
 				D3EAEDD2205AE4CE0033CF62 /* ComposableTest+Sync.swift */,
 				D3EAEDCE205AE4430033CF62 /* ComposableTest+Timeout.swift */,
+				D3EAEDDE205AF0AB0033CF62 /* ComposableTest+Zip.swift */,
 				D3EAEDAD205AE0B20033CF62 /* Info.plist */,
 				D3EAEDC7205AE24A0033CF62 /* SwiftComposeTests-Bridging-Header.h */,
-				D3EAEDDE205AF0AB0033CF62 /* ComposableTest+Zip.swift */,
 			);
 			path = SwiftComposeTests;
 			sourceTree = "<group>";
@@ -385,6 +388,7 @@
 				D3EAEDDD205AEF4C0033CF62 /* Composable+Zip.swift in Sources */,
 				D3EAEDC6205AE23D0033CF62 /* Composable.swift in Sources */,
 				D3EAEDC0205AE23D0033CF62 /* Composable+Noop.swift in Sources */,
+				D315FE88205B687A0050CED0 /* Types.swift in Sources */,
 				D3EAEDC4205AE23D0033CF62 /* Composable+Retry.swift in Sources */,
 				D3EAEDC5205AE23D0033CF62 /* Composable+Catch.swift in Sources */,
 				D3EAEDC2205AE23D0033CF62 /* Composable+Sync.swift in Sources */,
