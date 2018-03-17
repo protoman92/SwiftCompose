@@ -11,58 +11,58 @@ import XCTest
 @testable import SwiftCompose
 
 public extension ComposableTest {
-	public func test_composeCatch_shouldWork() {
-		/// Setup
-		var actualError: Error?
-		var actualResult: Int?
-		let fInt: Supplier<Int> = {throw FPError("")}
+  public func test_composeCatch_shouldWork() {
+    /// Setup
+    var actualError: Error?
+    var actualResult: Int?
+    let fInt: Supplier<Int> = {throw FPError("")}
 
-		/// When
-		do {
-			actualResult = try Composable.catch({_ in 1}).wrap(fInt)()
-		} catch let e {
-			actualError = e
-		}
+    /// When
+    do {
+      actualResult = try Composable.catch({_ in 1}).wrap(fInt)()
+    } catch let e {
+      actualError = e
+    }
 
-		/// Then
-		XCTAssertNil(actualError)
-		XCTAssertEqual(actualResult, 1)
-	}
+    /// Then
+    XCTAssertNil(actualError)
+    XCTAssertEqual(actualResult, 1)
+  }
 
-	public func test_composableCatchWithoutError_shouldWork() {
-		/// Setup
-		var actualError: Error?
-		var actualResult: Int?
-		let fInt: Supplier<Int> = {1}
+  public func test_composableCatchWithoutError_shouldWork() {
+    /// Setup
+    var actualError: Error?
+    var actualResult: Int?
+    let fInt: Supplier<Int> = {1}
 
-		/// When
-		do {
-			actualResult = try Composable.catchReturn(100).wrap(fInt)()
-		} catch let e {
-			actualError = e
-		}
+    /// When
+    do {
+      actualResult = try Composable.catchReturn(100).wrap(fInt)()
+    } catch let e {
+      actualError = e
+    }
 
-		/// Then
-		XCTAssertNil(actualError)
-		XCTAssertEqual(actualResult, 1)
-	}
+    /// Then
+    XCTAssertNil(actualError)
+    XCTAssertEqual(actualResult, 1)
+  }
 
-	public func test_composeCatchThrows_shouldWork() {
-		/// Setup
-		var actualError: Error?
-		var actualResult: Int?
-		let fInt: Supplier<Int> = {throw FPError("")}
+  public func test_composeCatchThrows_shouldWork() {
+    /// Setup
+    var actualError: Error?
+    var actualResult: Int?
+    let fInt: Supplier<Int> = {throw FPError("")}
 
-		/// When
-		do {
-			actualResult = try Composable.catch({throw $0}).wrap(fInt)()
-		} catch let e {
-			actualError = e
-		}
+    /// When
+    do {
+      actualResult = try Composable.catch({throw $0}).wrap(fInt)()
+    } catch let e {
+      actualError = e
+    }
 
-		/// Then
-		XCTAssertNotNil(actualError)
-		XCTAssertTrue(actualError is FPError)
-		XCTAssertNil(actualResult)
-	}
+    /// Then
+    XCTAssertNotNil(actualError)
+    XCTAssertTrue(actualError is FPError)
+    XCTAssertNil(actualResult)
+  }
 }
