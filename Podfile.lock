@@ -1,5 +1,5 @@
 PODS:
-  - SwiftFP/Main (1.0.0)
+  - SwiftFP/Main (1.0.1)
 
 DEPENDENCIES:
   - SwiftFP/Main (from `https://github.com/protoman92/SwiftFP.git`)
@@ -10,11 +10,11 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   SwiftFP:
-    :commit: 9eccc4ed2f1e8f367eefb222ceaf5bf66be91665
+    :commit: eb32feb8cfb44c2d69431ec4cae455daf73339a7
     :git: https://github.com/protoman92/SwiftFP.git
 
 SPEC CHECKSUMS:
-  SwiftFP: 7ce3b2b2fb3c85d6195fd50cb1d873dcf82ae50e
+  SwiftFP: 25277c3c13de8b45771702a77443cd1d3c2761b2
 
 PODFILE CHECKSUM: e278c04a01f5a6af290d8a83820317242307aa04
 

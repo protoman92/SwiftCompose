@@ -1,5 +1,5 @@
 //
-//  Composable+Timeout.swift
+//  SupplyComposable+Timeout.swift
 //  SwiftCompose
 //
 //  Created by Hai Pham on 15/3/18.
@@ -8,7 +8,7 @@
 
 import SwiftFP
 
-public extension Composable {
+public extension SupplyComposable {
 
   /// Times out an operation with a timeout error. For the second curried
   /// parameter, provide the DispatchQueue to run the operation on. The
@@ -21,30 +21,30 @@ public extension Composable {
   ///
   /// - Parameter duration: A TimeInterval value.
   /// - Returns: A Composable instance.
-  public static func timeout(_ duration: TimeInterval) -> (DispatchQueue) -> Composable<T> {
-    return {(dq: DispatchQueue) -> Composable<T> in
+  public static func timeout(_ duration: TimeInterval) -> (DispatchQueue) -> SupplyComposable<T> {
+    return {(dq: DispatchQueue) -> SupplyComposable<T> in
       let sf: SupplierF<T> = {(s: @escaping Supplier<T>) -> Supplier<T> in
         return {
           let dispatchGroup = DispatchGroup()
-          var result: Try<T>?
+          var result: StrongReference<Try<T>>?
           dispatchGroup.enter()
 
           dq.async {
-            result = Try(s)
+            result = StrongReference(Try(s))
             dispatchGroup.leave()
           }
 
           _ = dispatchGroup.wait(timeout: DispatchTime.now() + duration)
 
           if let resultF = result {
-            return try resultF.getOrThrow()
+            return try resultF.value.getOrThrow()
           } else {
             throw FPError("Timed out after \(duration)")
           }
         }
       }
 
-      return Composable(sf)
+      return SupplyComposable(sf)
     }
   }
 }

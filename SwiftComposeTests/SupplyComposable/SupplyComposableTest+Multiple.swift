@@ -1,5 +1,5 @@
 //
-//  ComposableTest+Multiple.swift
+//  SupplyComposableTest+Multiple.swift
 //  SwiftComposeTests
 //
 //  Created by Hai Pham on 16/3/18.
@@ -10,7 +10,7 @@ import SwiftFP
 import XCTest
 @testable import SwiftCompose
 
-public extension ComposableTest {
+public extension SupplyComposableTest {
   public func test_multipleComposition_shouldWork() {
     /// Setup
     var actualError: Error?
@@ -29,9 +29,9 @@ public extension ComposableTest {
 
     /// When & Then 1
     do {
-      actualResult = try Composable<Int>.publishError(publishF)
-        .compose(Composable.retry(retryCount!))
-        .compose(Composable.timeout(10)(dispatchQueue))
+      actualResult = try SupplyComposable<Int>.publishError(publishF)
+        .compose(SupplyComposable.retry(retryCount!))
+        .compose(SupplyComposable.timeout(10)(dispatchQueue))
         .wrap(fInt)()
     } catch let e {
       actualError = e
@@ -45,9 +45,9 @@ public extension ComposableTest {
     reset()
 
     do {
-      actualResult = try Composable<Int>.retry(retryCount!)
-        .compose(Composable.publishError(publishF))
-        .compose(Composable.timeout(10)(dispatchQueue))
+      actualResult = try SupplyComposable<Int>.retry(retryCount!)
+        .compose(SupplyComposable.publishError(publishF))
+        .compose(SupplyComposable.timeout(10)(dispatchQueue))
         .wrap(fInt)()
     } catch let e {
       actualError = e
@@ -61,11 +61,11 @@ public extension ComposableTest {
     reset()
 
     do {
-      actualResult = try Composable<Int>.retry(retryCount!)
-        .compose(Composable.retry(retryCount!))
-        .compose(Composable.publishError(publishF))
-        .compose(Composable.timeout(2)(dispatchQueue))
-        .compose(Composable.catchReturn(1)) // Nullify all above.
+      actualResult = try SupplyComposable<Int>.retry(retryCount!)
+        .compose(SupplyComposable.retry(retryCount!))
+        .compose(SupplyComposable.publishError(publishF))
+        .compose(SupplyComposable.timeout(2)(dispatchQueue))
+        .compose(SupplyComposable.catchReturn(1)) // Nullify all above.
         .wrap(fInt)()
     } catch let e {
       actualError = e

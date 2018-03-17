@@ -1,5 +1,5 @@
 //
-//  Composable.swift
+//  SupplyComposable.swift
 //  SwiftCompose
 //
 //  Created by Hai Pham on 14/3/18.
@@ -8,9 +8,9 @@
 
 import SwiftFP
 
-/// Composable represents a function wrapper that can compose with other
-/// Composables to enhance the wrapped function.
-public struct Composable<T> {
+/// SupplyComposable represents a function wrapper that can compose with other
+/// SupplyComposables to enhance the wrapped Supplier function.
+public struct SupplyComposable<T> {
   private let sf: SupplierF<T>
 
   public init(_ sf: @escaping SupplierF<T>) {
@@ -56,19 +56,19 @@ public struct Composable<T> {
   ///
   /// - Parameter sf: A SupplierF instance.
   /// - Returns: A Composable instance.
-  public func compose(_ sf: @escaping SupplierF<T>) -> Composable<T> {
+  public func compose(_ sf: @escaping SupplierF<T>) -> SupplyComposable<T> {
     let newSf: SupplierF<T> = {(s: @escaping Supplier<T>) -> Supplier<T> in
       return try self.wrap(sf(s))
     }
 
-    return Composable(newSf)
+    return SupplyComposable(newSf)
   }
 
   /// Compose with another Composable to enhance functionalities.
   ///
   /// - Parameter cp: A Composable instance.
   /// - Returns: A Composable instance.
-  public func compose(_ cp: Composable<T>) -> Composable<T> {
+  public func compose(_ cp: SupplyComposable<T>) -> SupplyComposable<T> {
     return compose(cp.sf)
   }
 }

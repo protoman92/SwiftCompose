@@ -1,5 +1,5 @@
 //
-//  Composable+Sync.swift
+//  SupplyComposable+Sync.swift
 //  SwiftCompose
 //
 //  Created by Hai Pham on 15/3/18.
@@ -8,7 +8,7 @@
 
 import SwiftFP
 
-public extension Composable {
+public extension SupplyComposable {
 
   /// Synchronize the result of an async operation. It is important that the
   /// calling queue and perform queue have the same constraints as those
@@ -20,10 +20,10 @@ public extension Composable {
   public static func sync(_ callbackFn: @escaping AsyncOperation<T>) -> Supplier<T> {
     return {
       let dispatchGroup = DispatchGroup()
-      var result: Try<T>?
+      var result: StrongReference<Try<T>>?
 
       let callback: AsyncCallback<T> = {(v: Try<T>) -> Void in
-        result = v
+        result = StrongReference(v)
         dispatchGroup.leave()
       }
 
@@ -32,7 +32,7 @@ public extension Composable {
       dispatchGroup.wait()
 
       if let result = result {
-        return try result.getOrThrow()
+        return try result.value.getOrThrow()
       } else {
         throw FPError("Invalid result/error")
       }

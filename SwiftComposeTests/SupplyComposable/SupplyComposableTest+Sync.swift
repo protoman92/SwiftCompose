@@ -1,5 +1,5 @@
 //
-//  ComposableTest+Sync.swift
+//  SupplyComposableTest+Sync.swift
 //  SwiftComposeTests
 //
 //  Created by Hai Pham on 16/3/18.
@@ -10,7 +10,7 @@ import SwiftFP
 import XCTest
 @testable import SwiftCompose
 
-public extension ComposableTest {
+public extension SupplyComposableTest {
   public func test_composeAsyncToSync_shouldWork() {
     /// Setup
     var actualResult: Int?
@@ -23,7 +23,7 @@ public extension ComposableTest {
       }
     }
 
-    let composed = Composable.sync(asyncOp)
+    let composed = SupplyComposable.sync(asyncOp)
     let expect = expectation(description: "Should have completed")
 
     /// When
@@ -68,9 +68,9 @@ public extension ComposableTest {
 
     /// When
     do {
-      actualResult = try Composable<String>.retry(retryCount!)
-        .compose(Composable.publishError({_ in publishCount += 1}))
-        .wrap(Composable.sync(asyncOp))()
+      actualResult = try SupplyComposable<String>.retry(retryCount!)
+        .compose(SupplyComposable.publishError({_ in publishCount += 1}))
+        .wrap(SupplyComposable.sync(asyncOp))()
     } catch let e {
       actualError = e
     }

@@ -1,5 +1,5 @@
 //
-//  ComposableTest+Map.swift
+//  SupplyComposableTest+Map.swift
 //  SwiftComposeTests
 //
 //  Created by Hai Pham on 16/3/18.
@@ -9,13 +9,13 @@
 import XCTest
 @testable import SwiftCompose
 
-public extension ComposableTest {
+public extension SupplyComposableTest {
   public func test_composeMap_shouldWork() {
     /// Setup
     let fInt: Supplier<Int> = {1}
 
     /// When
-    let result = try? Composable.map({$0 * 2}).wrap(fInt)()
+    let result = try? SupplyComposable.map({$0 * 2}).wrap(fInt)()
 
     /// Then
     XCTAssertEqual(result, 2)

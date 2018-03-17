@@ -1,5 +1,5 @@
 //
-//  ComposableTest+Timeout.swift
+//  SupplyComposableTest+Timeout.swift
 //  SwiftComposeTests
 //
 //  Created by Hai Pham on 16/3/18.
@@ -10,7 +10,7 @@ import SwiftFP
 import XCTest
 @testable import SwiftCompose
 
-public extension ComposableTest {
+public extension SupplyComposableTest {
   public func test_composeTimeout_shouldWork() {
     /// Setup
     var actualError1: Error?
@@ -30,7 +30,7 @@ public extension ComposableTest {
       return 2
     }
 
-    let timeoutF = Composable<Int>.timeout(timeout)(dispatchQueue)
+    let timeoutF = SupplyComposable<Int>.timeout(timeout)(dispatchQueue)
 
     /// When
     do {

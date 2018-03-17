@@ -1,5 +1,5 @@
 //
-//  ComposableTest+Publish.swift
+//  SupplyComposableTest+Publish.swift
 //  SwiftComposeTests
 //
 //  Created by Hai Pham on 16/3/18.
@@ -9,7 +9,7 @@
 import XCTest
 @testable import SwiftCompose
 
-public extension ComposableTest {
+public extension SupplyComposableTest {
   public func test_composePublish_shouldWork() {
     /// Setup
     var published = 0
@@ -22,7 +22,7 @@ public extension ComposableTest {
       publishedValue = $0
     }
 
-    let publishC = Composable.publish(publishF)
+    let publishC = SupplyComposable.publish(publishF)
 
     /// When
     let result = try! publishC.wrap(fInt)()

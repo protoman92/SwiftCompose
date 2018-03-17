@@ -1,12 +1,12 @@
 //
-//  Composable+Noop.swift
+//  SupplyComposable+Noop.swift
 //  SwiftCompose
 //
 //  Created by Hai Pham on 15/3/18.
 //  Copyright © 2018 Hai Pham. All rights reserved.
 //
 
-public extension Composable {
+public extension SupplyComposable {
 
   /// Noop does nothing an simply returns whatever is passed in.
   ///

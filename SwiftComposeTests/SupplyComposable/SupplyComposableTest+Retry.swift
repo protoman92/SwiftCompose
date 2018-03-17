@@ -1,5 +1,5 @@
 //
-//  ComposableTest+Retry.swift
+//  SupplyComposableTest+Retry.swift
 //  SwiftComposeTests
 //
 //  Created by Hai Pham on 16/3/18.
@@ -10,7 +10,7 @@ import SwiftFP
 import XCTest
 @testable import SwiftCompose
 
-public extension ComposableTest {
+public extension SupplyComposableTest {
   public func test_composeRetry_shouldWork() {
     /// Setup
     var actualError: Error?
@@ -22,7 +22,7 @@ public extension ComposableTest {
       throw FPError(error)
     }
 
-    let retryF = Composable<Int>.retry(retryCount!)
+    let retryF = SupplyComposable<Int>.retry(retryCount!)
 
     /// When
     do {
@@ -49,7 +49,7 @@ public extension ComposableTest {
       throw FPError(error)
     }
 
-    let retryF = Composable<Int>.retryWithDelay(retryCount!)(duration)
+    let retryF = SupplyComposable<Int>.retryWithDelay(retryCount!)(duration)
 
     /// When
     let start = Date()

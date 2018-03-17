@@ -1,5 +1,5 @@
 //
-//  ComposableTest+Zip.swift
+//  SupplyComposableTest+Zip.swift
 //  SwiftComposeTests
 //
 //  Created by Hai Pham on 16/3/18.
@@ -10,7 +10,7 @@ import SwiftFP
 import XCTest
 @testable import SwiftCompose
 
-public extension ComposableTest {
+public extension SupplyComposableTest {
   public func test_composeZip_shouldWork() {
     /// Setup
     let error = "Error"
@@ -18,7 +18,7 @@ public extension ComposableTest {
     let s1: Supplier<Int> = {1}
     let s2: Supplier<Int> = {2}
     let s3: Supplier<Int> = {throw FPError(error)}
-    let composed = Composable<Int>.zipVarargs(zipF)
+    let composed = SupplyComposable<Int>.zipVarargs(zipF)
 
     /// When & Then
     do {

@@ -1,12 +1,12 @@
 //
-//  Composable+Zip.swift
+//  SupplyComposable+Zip.swift
 //  SwiftCompose
 //
 //  Created by Hai Pham on 16/3/18.
 //  Copyright © 2018 Hai Pham. All rights reserved.
 //
 
-public extension Composable {
+public extension SupplyComposable {
 
   /// Zip the results of a Sequence of Suppliers.
   ///

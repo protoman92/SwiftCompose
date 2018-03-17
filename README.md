@@ -17,12 +17,12 @@ Composable functions for Swift. This library may help those who aren't exactly c
   }
 
   func main() {
-    let composed = Compose<Int>.publish({print($0)})
-      .compose(Compose.publishError({print($0)}))
-      .compose(Compose.retryWithDelay(10)(0.5))
-      .compose(Compose.timeout(0.5)(DispatchQueue.global(.background))
-      .compose(Compose.map({$0 * 2}))
-      .compose(Compose.noop())
+    let composed = SupplyComposable<Int>.publish({print($0)})
+      .compose(SupplyComposable.publishError({print($0)}))
+      .compose(SupplyComposable.retryWithDelay(10)(0.5))
+      .compose(SupplyComposable.timeout(0.5)(DispatchQueue.global(.background))
+      .compose(SupplyComposable.map({$0 * 2}))
+      .compose(SupplyComposable.noop())
 
     /// Now we have a higher-order function that accepts a function as parameter
     /// and transform it into another that has the specified traits.
@@ -33,7 +33,7 @@ Composable functions for Swift. This library may help those who aren't exactly c
 
     /// Or synchronize an async function and access its results on the same
     /// queue.
-    try? composed.wrap(Composable.sync(someAsyncFunction))()
+    try? composed.wrap(SupplyComposable.sync(someAsyncFunction))()
 
     /// Or invoke asynchronously.
     let onNext = composed.wrapAsync({(v: Try<Int>) in print(v)})
@@ -41,4 +41,4 @@ Composable functions for Swift. This library may help those who aren't exactly c
   }
 ```
 
-The idea is that we can abstract away some common logic (e.g. w.r.t error handling) by passing around these higher-order functions (perhaps via a dependency provider) and use them to infuse normal functions with special capabilities. For e.g., in **Compose.publishError(_:)**, we may run some code that asynchronously logs the error to server, so using this approach we can apply the same treatment everywhere.
+The idea is that we can abstract away some common logic (e.g. w.r.t error handling) by passing around these higher-order functions (perhaps via a dependency provider) and use them to infuse normal functions with special capabilities. For e.g., in **SupplyComposable.publishError(_:)**, we may run some code that asynchronously logs the error to server, so using this approach we can apply the same treatment everywhere.

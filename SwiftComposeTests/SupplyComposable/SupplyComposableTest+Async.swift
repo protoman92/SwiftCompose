@@ -1,5 +1,5 @@
 //
-//  ComposableTest+Async.swift
+//  SupplyComposable+Async.swift
 //  SwiftComposeTests
 //
 //  Created by Hai Pham on 16/3/18.
@@ -10,7 +10,7 @@ import SwiftFP
 import XCTest
 @testable import SwiftCompose
 
-public extension ComposableTest {
+public extension SupplyComposableTest {
   public func test_invokeAsync_shouldWork() {
     /// Setup
     var errorCount = 0
@@ -20,8 +20,8 @@ public extension ComposableTest {
     let dispatchQueue = DispatchQueue.global(qos: .background)
     let expect = expectation(description: "Should have completed")
 
-    let composed1 = Composable<Int>.retry(retryCount!)
-      .compose(Composable.publishError({_ in publishCount += 1}))
+    let composed1 = SupplyComposable<Int>.retry(retryCount!)
+      .compose(SupplyComposable.publishError({_ in publishCount += 1}))
       .wrapAsync({
         do {
           _ = try $0.getOrThrow()
@@ -55,9 +55,9 @@ public extension ComposableTest {
     let callingDq = DispatchQueue.global(qos: .background)
     let performDq = DispatchQueue.global(qos: .background)
 
-    let composed = Composable<Int>.timeout(timeout)(performDq)
-      .compose(Composable.retry(retryCount!))
-      .compose(Composable.noop())
+    let composed = SupplyComposable<Int>.timeout(timeout)(performDq)
+      .compose(SupplyComposable.retry(retryCount!))
+      .compose(SupplyComposable.noop())
 
     let expect = expectation(description: "Should have completed")
 

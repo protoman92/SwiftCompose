@@ -6,13 +6,13 @@
 //  Copyright © 2018 Hai Pham. All rights reserved.
 //
 
-public extension Composable {
+public extension SupplyComposable {
 
   /// Publish the result of a Supplier.
   ///
   /// - Parameter p: A callback function.
   /// - Returns: A Composable instance.
-  public static func publish(_ p: @escaping (T) throws -> Void) -> Composable<T> {
+  public static func publish(_ p: @escaping (T) throws -> Void) -> SupplyComposable<T> {
     let ss: SupplierF<T> = {(s: @escaping Supplier<T>) throws -> Supplier<T> in
       return {
         let value = try s()
@@ -21,7 +21,7 @@ public extension Composable {
       }
     }
 
-    return Composable(ss)
+    return SupplyComposable(ss)
   }
 
   /// publishError is similar to publish, but it only publishes if an error
@@ -29,7 +29,7 @@ public extension Composable {
   ///
   /// - Parameter p: An error callback function.
   /// - Returns: A Composable instance.
-  public static func publishError(_ p: @escaping (Error) throws -> Void) -> Composable<T> {
+  public static func publishError(_ p: @escaping (Error) throws -> Void) -> SupplyComposable<T> {
     let ss: SupplierF<T> = {(s: @escaping Supplier<T>) -> Supplier<T> in
       return {
         do {
@@ -41,6 +41,6 @@ public extension Composable {
       }
     }
 
-    return Composable(ss)
+    return SupplyComposable(ss)
   }
 }

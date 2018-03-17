@@ -1,12 +1,12 @@
 //
-//  Composable+Retry.swift
+//  SupplyComposable+Retry.swift
 //  SwiftCompose
 //
 //  Created by Hai Pham on 15/3/18.
 //  Copyright © 2018 Hai Pham. All rights reserved.
 //
 
-public extension Composable {
+public extension SupplyComposable {
 
   /// Retry wraps an error-returning function with retry capabilities. It
   /// also keeps track of the current retry count, which may be useful if we
@@ -41,13 +41,13 @@ public extension Composable {
   ///
   /// - Parameter times: The number of times to retry.
   /// - Returns: A Composable instance.
-  public static func retry(_ times: Int) -> Composable<T> {
+  public static func retry(_ times: Int) -> SupplyComposable<T> {
     let ss = {(s: @escaping Supplier<T>) -> Supplier<T> in
       let fCount: (Int) throws -> T = {_ in try s()}
       return retryWithCount(times)(fCount)
     }
 
-    return Composable(ss)
+    return SupplyComposable(ss)
   }
 
   /// Curry to provide retry and delay capabilities. Provide seconds for the
@@ -55,8 +55,8 @@ public extension Composable {
   ///
   /// - Parameter times: The number of times to retry.
   /// - Returns: A custom higher order function.
-  public static func retryWithDelay(_ times: Int) -> (TimeInterval) -> Composable<T> {
-    return {(d: TimeInterval) -> Composable<T> in
+  public static func retryWithDelay(_ times: Int) -> (TimeInterval) -> SupplyComposable<T> {
+    return {(d: TimeInterval) -> SupplyComposable<T> in
       let ss: SupplierF<T> = {(s: @escaping Supplier<T>) -> Supplier<T> in
         retryWithCount(times)({
           if $0 > 0 { Thread.sleep(forTimeInterval: d) }
@@ -64,7 +64,7 @@ public extension Composable {
         })
       }
 
-      return Composable(ss)
+      return SupplyComposable(ss)
     }
   }
 }
