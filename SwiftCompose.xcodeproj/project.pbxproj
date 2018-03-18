@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		0704FCD67542B338A29B40AF /* Pods_SwiftComposeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA82CDD04C43325CDB7A57DC /* Pods_SwiftComposeTests.framework */; };
 		53ECE44662FA389AF6E60DD5 /* Pods_SwiftCompose.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C14790471E4B34796705F38 /* Pods_SwiftCompose.framework */; };
+		D312BF60205E2A5800F366A5 /* FuncComposable+Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = D312BF5F205E2A5800F366A5 /* FuncComposable+Map.swift */; };
+		D312BF62205E2BB700F366A5 /* FuncComposableTest+Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = D312BF61205E2BB700F366A5 /* FuncComposableTest+Map.swift */; };
 		D315FE88205B687A0050CED0 /* SupplyComposable+Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = D315FE87205B687A0050CED0 /* SupplyComposable+Types.swift */; };
 		D3EAEDA7205AE0B20033CF62 /* SwiftCompose.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3EAED9D205AE0B20033CF62 /* SwiftCompose.framework */; };
 		D3EAEDAE205AE0B20033CF62 /* SwiftCompose.h in Headers */ = {isa = PBXBuildFile; fileRef = D3EAEDA0205AE0B20033CF62 /* SwiftCompose.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -57,6 +59,8 @@
 		667D3D86FC74C9406ED5BA87 /* Pods-SwiftComposeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftComposeTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftComposeTests/Pods-SwiftComposeTests.release.xcconfig"; sourceTree = "<group>"; };
 		7C14790471E4B34796705F38 /* Pods_SwiftCompose.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftCompose.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA82CDD04C43325CDB7A57DC /* Pods_SwiftComposeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftComposeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D312BF5F205E2A5800F366A5 /* FuncComposable+Map.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FuncComposable+Map.swift"; sourceTree = "<group>"; };
+		D312BF61205E2BB700F366A5 /* FuncComposableTest+Map.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FuncComposableTest+Map.swift"; sourceTree = "<group>"; };
 		D315FE87205B687A0050CED0 /* SupplyComposable+Types.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SupplyComposable+Types.swift"; sourceTree = "<group>"; };
 		D3EAED9D205AE0B20033CF62 /* SwiftCompose.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftCompose.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3EAEDA0205AE0B20033CF62 /* SwiftCompose.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftCompose.h; sourceTree = "<group>"; };
@@ -220,6 +224,7 @@
 				D3FBD4DB205D544F00CF0CEB /* FuncComposable.swift */,
 				D3FBD4DD205D547300CF0CEB /* FuncComposable+Types.swift */,
 				D3FBD4DF205D576100CF0CEB /* FuncComposable+Pair.swift */,
+				D312BF5F205E2A5800F366A5 /* FuncComposable+Map.swift */,
 			);
 			path = FuncComposable;
 			sourceTree = "<group>";
@@ -229,6 +234,7 @@
 			children = (
 				D3FBD4E2205D5D3B00CF0CEB /* FuncComposableTest.swift */,
 				D3FBD4E4205D5D5B00CF0CEB /* FuncComposableTest+Pair.swift */,
+				D312BF61205E2BB700F366A5 /* FuncComposableTest+Map.swift */,
 			);
 			path = FuncComposable;
 			sourceTree = "<group>";
@@ -456,6 +462,7 @@
 				D3EAEDC5205AE23D0033CF62 /* SupplyComposable+Catch.swift in Sources */,
 				D3EAEDC2205AE23D0033CF62 /* SupplyComposable+Sync.swift in Sources */,
 				D3FBD4DC205D544F00CF0CEB /* FuncComposable.swift in Sources */,
+				D312BF60205E2A5800F366A5 /* FuncComposable+Map.swift in Sources */,
 				D3EAEDC1205AE23D0033CF62 /* SupplyComposable+Publish.swift in Sources */,
 				D3FBD4E0205D576100CF0CEB /* FuncComposable+Pair.swift in Sources */,
 				D3EAEDBF205AE23D0033CF62 /* SupplyComposable+Map.swift in Sources */,
@@ -473,6 +480,7 @@
 				D3EAEDD1205AE4900033CF62 /* SupplyComposableTest+Catch.swift in Sources */,
 				D3EAEDD9205AE5570033CF62 /* SupplyComposableTest+Async.swift in Sources */,
 				D3EAEDCD205AE4210033CF62 /* SupplyComposableTest+Publish.swift in Sources */,
+				D312BF62205E2BB700F366A5 /* FuncComposableTest+Map.swift in Sources */,
 				D3EAEDCF205AE4440033CF62 /* SupplyComposableTest+Timeout.swift in Sources */,
 				D3FBD4E3205D5D3B00CF0CEB /* FuncComposableTest.swift in Sources */,
 				D3EAEDD7205AE5350033CF62 /* SupplyComposableTest+Multiple.swift in Sources */,
