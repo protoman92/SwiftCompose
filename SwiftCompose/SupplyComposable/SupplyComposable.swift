@@ -58,7 +58,7 @@ public struct SupplyComposable<T> {
   /// - Returns: A Composable instance.
   public func compose(_ sf: @escaping SupplierF<T>) -> SupplyComposable<T> {
     let newSf: SupplierF<T> = {(s: @escaping Supplier<T>) -> Supplier<T> in
-      return {try self.wrap(sf(s)).invoke()}
+      return {try self.wrap(sf(s)).invoke(())}
     }
 
     return SupplyComposable(newSf)

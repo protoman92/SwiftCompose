@@ -14,6 +14,9 @@
 		D312BF64205E496700F366A5 /* SupplierW.swift in Sources */ = {isa = PBXBuildFile; fileRef = D312BF63205E496700F366A5 /* SupplierW.swift */; };
 		D312BF66205E4E8800F366A5 /* FunctionW.swift in Sources */ = {isa = PBXBuildFile; fileRef = D312BF65205E4E8800F366A5 /* FunctionW.swift */; };
 		D315FE88205B687A0050CED0 /* SupplyComposable+Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = D315FE87205B687A0050CED0 /* SupplyComposable+Types.swift */; };
+		D318D6FE205E69C000CBD754 /* CallbackW.swift in Sources */ = {isa = PBXBuildFile; fileRef = D318D6FD205E69C000CBD754 /* CallbackW.swift */; };
+		D318D701205E716B00CBD754 /* CallbackComposable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D318D700205E716B00CBD754 /* CallbackComposable.swift */; };
+		D318D703205E718D00CBD754 /* CallbackComposableTest+Distinct.swift in Sources */ = {isa = PBXBuildFile; fileRef = D318D702205E718D00CBD754 /* CallbackComposableTest+Distinct.swift */; };
 		D3EAEDA7205AE0B20033CF62 /* SwiftCompose.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3EAED9D205AE0B20033CF62 /* SwiftCompose.framework */; };
 		D3EAEDAE205AE0B20033CF62 /* SwiftCompose.h in Headers */ = {isa = PBXBuildFile; fileRef = D3EAEDA0205AE0B20033CF62 /* SwiftCompose.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D3EAEDBF205AE23D0033CF62 /* SupplyComposable+Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EAEDB7205AE23C0033CF62 /* SupplyComposable+Map.swift */; };
@@ -66,6 +69,9 @@
 		D312BF63205E496700F366A5 /* SupplierW.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupplierW.swift; sourceTree = "<group>"; };
 		D312BF65205E4E8800F366A5 /* FunctionW.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunctionW.swift; sourceTree = "<group>"; };
 		D315FE87205B687A0050CED0 /* SupplyComposable+Types.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SupplyComposable+Types.swift"; sourceTree = "<group>"; };
+		D318D6FD205E69C000CBD754 /* CallbackW.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallbackW.swift; sourceTree = "<group>"; };
+		D318D700205E716B00CBD754 /* CallbackComposable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallbackComposable.swift; sourceTree = "<group>"; };
+		D318D702205E718D00CBD754 /* CallbackComposableTest+Distinct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CallbackComposableTest+Distinct.swift"; sourceTree = "<group>"; };
 		D3EAED9D205AE0B20033CF62 /* SwiftCompose.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftCompose.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3EAEDA0205AE0B20033CF62 /* SwiftCompose.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftCompose.h; sourceTree = "<group>"; };
 		D3EAEDA1205AE0B20033CF62 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -143,6 +149,23 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		D318D6FC205E69B200CBD754 /* CallbackComposable */ = {
+			isa = PBXGroup;
+			children = (
+				D318D6FD205E69C000CBD754 /* CallbackW.swift */,
+			);
+			path = CallbackComposable;
+			sourceTree = "<group>";
+		};
+		D318D6FF205E715700CBD754 /* CallbackComposable */ = {
+			isa = PBXGroup;
+			children = (
+				D318D700205E716B00CBD754 /* CallbackComposable.swift */,
+				D318D702205E718D00CBD754 /* CallbackComposableTest+Distinct.swift */,
+			);
+			path = CallbackComposable;
+			sourceTree = "<group>";
+		};
 		D3EAED93205AE0B20033CF62 = {
 			isa = PBXGroup;
 			children = (
@@ -168,6 +191,7 @@
 		D3EAED9F205AE0B20033CF62 /* SwiftCompose */ = {
 			isa = PBXGroup;
 			children = (
+				D318D6FC205E69B200CBD754 /* CallbackComposable */,
 				D3FBD4DA205D544000CF0CEB /* FuncComposable */,
 				D3EAEDA1205AE0B20033CF62 /* Info.plist */,
 				D3FBD4D8205D538300CF0CEB /* SupplyComposable */,
@@ -180,6 +204,7 @@
 		D3EAEDAA205AE0B20033CF62 /* SwiftComposeTests */ = {
 			isa = PBXGroup;
 			children = (
+				D318D6FF205E715700CBD754 /* CallbackComposable */,
 				D3FBD4E1205D5D2E00CF0CEB /* FuncComposable */,
 				D3EAEDAD205AE0B20033CF62 /* Info.plist */,
 				D3FBD4D9205D53F900CF0CEB /* SupplyComposable */,
@@ -475,6 +500,7 @@
 				D3FBD4E0205D576100CF0CEB /* FuncComposable+Pair.swift in Sources */,
 				D3EAEDBF205AE23D0033CF62 /* SupplyComposable+Map.swift in Sources */,
 				D3FBD4E8205D5D6A00CF0CEB /* StrongReference.swift in Sources */,
+				D318D6FE205E69C000CBD754 /* CallbackW.swift in Sources */,
 				D3EAEDC3205AE23D0033CF62 /* SupplyComposable+Timeout.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -484,6 +510,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D3FBD4E5205D5D5B00CF0CEB /* FuncComposableTest+Pair.swift in Sources */,
+				D318D701205E716B00CBD754 /* CallbackComposable.swift in Sources */,
 				D3EAEDC9205AE24A0033CF62 /* SupplyComposableTest.swift in Sources */,
 				D3EAEDD1205AE4900033CF62 /* SupplyComposableTest+Catch.swift in Sources */,
 				D3EAEDD9205AE5570033CF62 /* SupplyComposableTest+Async.swift in Sources */,
@@ -496,6 +523,7 @@
 				D3EAEDCB205AE3EB0033CF62 /* SupplyComposableTest+Retry.swift in Sources */,
 				D3EAEDD5205AE50C0033CF62 /* SupplyComposableTest+Map.swift in Sources */,
 				D3EAEDD3205AE4CE0033CF62 /* SupplyComposableTest+Sync.swift in Sources */,
+				D318D703205E718D00CBD754 /* CallbackComposableTest+Distinct.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

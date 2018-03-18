@@ -7,14 +7,10 @@
 //
 
 /// Wrapper for a supplier function.
-public struct SupplierW<T> {
-  public let supplier: Supplier<T>
+public typealias SupplierW<R> = FunctionW<Void, R>
 
-  public init(_ supplier: @escaping Supplier<T>) {
-    self.supplier = supplier
-  }
-
-  public func invoke() throws -> T {
-    return try supplier()
+public extension FunctionW where T == Void {
+  public func invoke() throws -> R {
+    return try invoke(())
   }
 }
