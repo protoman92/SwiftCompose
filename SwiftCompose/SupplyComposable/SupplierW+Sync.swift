@@ -1,5 +1,5 @@
 //
-//  SupplyComposable+Sync.swift
+//  SupplierW+Sync.swift
 //  SwiftCompose
 //
 //  Created by Hai Pham on 15/3/18.
@@ -8,7 +8,7 @@
 
 import SwiftFP
 
-public extension FunctionW where T == Void {
+public extension SupplierW {
 
   /// Synchronize the result of an async operation. It is important that the
   /// calling queue and perform queue have the same constraints as those

@@ -11,7 +11,7 @@ import XCTest
 @testable import SwiftCompose
 
 public extension FunctionWTest {
-  public func test_composeCatch_shouldWork() {
+  public func test_functionCatch_shouldWork() {
     /// Setup
     var actualError: Error?
     var actualResult: Int?
@@ -29,7 +29,7 @@ public extension FunctionWTest {
     XCTAssertEqual(actualResult, 1)
   }
 
-  public func test_composableCatchWithoutError_shouldWork() {
+  public func test_functionCatchWithoutError_shouldWork() {
     /// Setup
     var actualError: Error?
     var actualResult: Int?
@@ -47,7 +47,7 @@ public extension FunctionWTest {
     XCTAssertEqual(actualResult, 1)
   }
 
-  public func test_composeCatchThrows_shouldWork() {
+  public func test_functionCatchThrows_shouldWork() {
     /// Setup
     var actualError: Error?
     var actualResult: Int?

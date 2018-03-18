@@ -10,7 +10,7 @@ import XCTest
 @testable import SwiftCompose
 
 public extension FunctionWTest {
-  public func test_composePublish_shouldWork() {
+  public func test_functionPublish_shouldWork() {
     /// Setup
     var published = 0
     var publishedValue = 0

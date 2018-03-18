@@ -11,7 +11,7 @@ import XCTest
 @testable import SwiftCompose
 
 public extension FunctionWTest {
-  public func test_composeRetry_shouldWork() {
+  public func test_functionRetry_shouldWork() {
     /// Setup
     var actualError: Error?
     var actualTryCount = 0
@@ -34,7 +34,7 @@ public extension FunctionWTest {
     XCTAssertEqual(actualError?.localizedDescription, error)
   }
 
-  public func test_composeRetryWithDelay_shouldWork() {
+  public func test_functionRetryWithDelay_shouldWork() {
     /// Setup
     retryCount = 15
     var actualError: Error?

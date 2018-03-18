@@ -11,7 +11,7 @@ import XCTest
 @testable import SwiftCompose
 
 public extension FunctionWTest {
-  public func test_composeInDifferentDispatchQueue_shouldWork() {
+  public func test_invokeOnDifferentDispatchQueue_shouldWork() {
     /// Setup
     var actualError: Error?
     var actualResult: Int?

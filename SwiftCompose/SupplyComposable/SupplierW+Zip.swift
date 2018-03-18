@@ -1,12 +1,12 @@
 //
-//  SupplyComposable+Zip.swift
+//  SupplierW+Zip.swift
 //  SwiftCompose
 //
 //  Created by Hai Pham on 16/3/18.
 //  Copyright © 2018 Hai Pham. All rights reserved.
 //
 
-public extension FunctionW where T == Void {
+public extension SupplierW {
 
   /// Zip the results of a Sequence of Suppliers.
   ///

@@ -1,7 +1,7 @@
 # SwiftCompose
 
 [![Build Status](https://travis-ci.org/protoman92/SwiftCompose.svg?branch=master)](https://travis-ci.org/protoman92/SwiftCompose)
-[![Coverage Status](https://coveralls.io/repos/github/protoman92/SwiftCompose/badge.svg?branch=master)](https://coveralls.io/github/protoman92/SwiftCompose?branch=master)
+[![Coverage Status](https://coveralls.io/repos/github/protoman92/SwiftCompose/badge.svg?branch=master&dummy=true)](https://coveralls.io/github/protoman92/SwiftCompose?branch=master)
 
 Composable functions for Swift. This library may help those who aren't exactly comfortable with functional paradigms (such as rx). Usage is simple:
 

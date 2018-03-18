@@ -11,7 +11,7 @@ import XCTest
 @testable import SwiftCompose
 
 public extension FunctionWTest {
-  public func test_composeTimeout_shouldWork() {
+  public func test_functionTimeout_shouldWork() {
     /// Setup
     var actualError1: Error?
     var actualError2: Error?

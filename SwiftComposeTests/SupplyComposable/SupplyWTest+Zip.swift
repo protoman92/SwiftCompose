@@ -11,7 +11,7 @@ import XCTest
 @testable import SwiftCompose
 
 public extension SupplyWTest {
-  public func test_composeZip_shouldWork() {
+  public func test_supplyZip_shouldWork() {
     /// Setup
     let error = "Error"
     let zipF: ([Int]) -> Int = {$0.reduce(0, +)}

@@ -1,13 +1,14 @@
 //
-//  CallbackW.swift
+//  CallbackW+Distinct.swift
 //  SwiftCompose
 //
-//  Created by Hai Pham on 18/3/18.
+//  Created by Hai Pham on 19/3/18.
 //  Copyright © 2018 Hai Pham. All rights reserved.
 //
 
-/// Extensions for CallbackW.
-public extension FunctionW where R == Void {
+import SwiftFP
+
+public extension CallbackW {
 
   /// Do not invoke the callback while the arguments have not changed.
   ///
@@ -16,22 +17,32 @@ public extension FunctionW where R == Void {
   public func distinctUntilChanged(_ c: @escaping (T, T) throws -> Bool) -> CallbackW<T> {
     let pairF: PairFunction<T, Void> = {
       if $0 == nil {
-        try self.invoke($1)
+        _ = try self.invoke($1)
       } else if let prev = $0, try c(prev, $1) {
-        try self.invoke($1)
+        _ = try self.invoke($1)
       }
     }
 
-    return FunctionW<T, Void>.pair(pairF)
+    return CallbackW<T>.pair(pairF)
   }
 }
 
-public extension FunctionW where T: Equatable, R == Void {
+public extension CallbackW where T: Equatable {
 
   /// Convenience function that makes use of equatability.
   ///
   /// - Returns: A CallbackW instance.
   public func distinctUntilChanged() -> CallbackW<T> {
     return distinctUntilChanged({$0 != $1})
+  }
+}
+
+public extension CallbackW where T: TryConvertibleType, T.Val: Equatable {
+
+  /// Convenience function that makes use of equatability.
+  ///
+  /// - Returns: A CallbackW instance.
+  public func distinctUntilChanged() -> CallbackW<T> {
+    return distinctUntilChanged({$0.asTry().value != $1.asTry().value})
   }
 }

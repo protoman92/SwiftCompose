@@ -11,7 +11,7 @@ import XCTest
 @testable import SwiftCompose
 
 public extension SupplyWTest {
-  public func test_composeAsyncToSync_shouldWork() {
+  public func test_supplyAsyncToSync_shouldWork() {
     /// Setup
     var actualResult: Int?
     let sleepTime: TimeInterval = 1
@@ -38,47 +38,48 @@ public extension SupplyWTest {
     XCTAssertEqual(actualResult, 3)
   }
 
-//  public func test_composeAsyncWithOtherComposable_shouldWork() {
-//    /// Setup
-//    struct CustomError: LocalizedError {
-//      private let message: String
-//      private let object: Any
-//
-//      public var errorDescription: String? {
-//        return message
-//      }
-//
-//      public init(_ message: String, _ object: Any) {
-//        self.message = message
-//        self.object = object
-//      }
-//    }
-//
-//    var actualResult: String?
-//    var actualError: Error?
-//    var publishCount = 0
-//    let error = "Error"
-//
-//    let asyncOp: AsyncOperation<String> = {(callback: @escaping AsyncCallback<String>) in
-//      DispatchQueue.global(qos: .utility).async {
-//        let cError = CustomError(error, NSArray())
-//        callback(Try.failure(cError))
-//      }
-//    }
-//
-//    /// When
-//    do {
-//      actualResult = try SupplyComposable<String>.retry(retryCount!)
-//        .compose(SupplyComposable.publishError({_ in publishCount += 1}))
-//        .wrap(SupplyComposable.sync(asyncOp)).invoke()
-//    } catch let e {
-//      actualError = e
-//    }
-//
-//    /// Then
-//    XCTAssertNil(actualResult)
-//    XCTAssertEqual(actualError?.localizedDescription, error)
-//    XCTAssertEqual(publishCount, retryCount! + 1)
-//  }
+  public func test_supplyAsyncWithOtherComposable_shouldWork() {
+    /// Setup
+    struct CustomError: LocalizedError {
+      private let message: String
+      private let object: Any
+
+      public var errorDescription: String? {
+        return message
+      }
+
+      public init(_ message: String, _ object: Any) {
+        self.message = message
+        self.object = object
+      }
+    }
+
+    var actualResult: String?
+    var actualError: Error?
+    var publishCount = 0
+    let error = "Error"
+
+    let asyncOp: AsyncOperation<String> = {(callback: @escaping AsyncCallback<String>) in
+      DispatchQueue.global(qos: .utility).async {
+        let cError = CustomError(error, NSArray())
+        callback(Try.failure(cError))
+      }
+    }
+
+    /// When
+    do {
+      actualResult = try SupplierW<String>.sync(asyncOp)
+        .publishError({_ in publishCount += 1})
+        .retry(retryCount!)
+        .invoke()
+    } catch let e {
+      actualError = e
+    }
+
+    /// Then
+    XCTAssertNil(actualResult)
+    XCTAssertEqual(actualError?.localizedDescription, error)
+    XCTAssertEqual(publishCount, retryCount! + 1)
+  }
 }
 

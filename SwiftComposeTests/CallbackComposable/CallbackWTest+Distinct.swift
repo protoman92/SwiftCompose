@@ -10,7 +10,7 @@ import XCTest
 @testable import SwiftCompose
 
 public extension CallbackWTest {
-  public func test_composeDistinct_shouldWork() {
+  public func test_callbackDistinct_shouldWork() {
     /// Setup
     var callCount = 0
     let callbackF: CallbackW<Int> = CallbackW({_ in callCount += 1})
@@ -24,4 +24,23 @@ public extension CallbackWTest {
     /// Then
     XCTAssertEqual(callCount, testCount!)
   }
+
+  public func test_callbackDistinctWithOptionals_shouldWork() {
+    /// Setup
+    var callCount = 0
+    let callbackF: CallbackW<Int?> = CallbackW({_ in callCount += 1})
+    let distinctF = callbackF.distinctUntilChanged()
+
+    /// When
+    for i in (0..<testCount!) {
+      (0..<100).forEach({_ in try! distinctF.invoke(i)})
+    }
+
+    for _ in (0..<testCount) {
+      try! distinctF.invoke(nil)
+    }
+
+    /// Then
+    XCTAssertEqual(callCount, testCount! + 1)
+   }
 }

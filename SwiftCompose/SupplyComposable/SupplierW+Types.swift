@@ -1,5 +1,5 @@
 //
-//  Types.swift
+//  SupplierW+Types.swift
 //  SwiftCompose
 //
 //  Created by Hai Pham on 16/3/18.

@@ -10,7 +10,7 @@ import XCTest
 @testable import SwiftCompose
 
 public extension FunctionWTest {
-  public func test_composePair_shouldWork() {
+  public func test_functionPair_shouldWork() {
     /// Setup
     var lastValue: Int?
 
