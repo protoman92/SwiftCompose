@@ -8,14 +8,14 @@
 
 /// Wrapper for Function.
 public struct FunctionW<T, R> {
-  fileprivate let f: Function<T, R>
+  public let function: Function<T, R>
 
   public init(_ f: @escaping Function<T, R>) {
-    self.f = f
+    self.function = f
   }
 
   public func invoke(_ value: T) throws -> R {
-    return try f(value)
+    return try function(value)
   }
 
   /// Reverse-map the input argument from a different type.

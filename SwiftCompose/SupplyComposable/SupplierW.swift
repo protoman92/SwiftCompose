@@ -8,7 +8,7 @@
 
 /// Wrapper for a supplier function.
 public struct SupplierW<T> {
-  fileprivate let supplier: Supplier<T>
+  public let supplier: Supplier<T>
 
   public init(_ supplier: @escaping Supplier<T>) {
     self.supplier = supplier
