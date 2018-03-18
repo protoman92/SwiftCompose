@@ -1,5 +1,5 @@
 //
-//  CallbackComposableTest+Distinct.swift
+//  CallbackWTest+Distinct.swift
 //  SwiftComposeTests
 //
 //  Created by Hai Pham on 18/3/18.
@@ -9,7 +9,7 @@
 import XCTest
 @testable import SwiftCompose
 
-public extension CallbackComposableTest {
+public extension CallbackWTest {
   public func test_composeDistinct_shouldWork() {
     /// Setup
     var callCount = 0

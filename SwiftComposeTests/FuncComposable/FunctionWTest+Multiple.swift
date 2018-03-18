@@ -1,5 +1,5 @@
 //
-//  SupplyComposableTest+Multiple.swift
+//  FunctionWTest+Multiple.swift
 //  SwiftComposeTests
 //
 //  Created by Hai Pham on 16/3/18.
@@ -10,7 +10,7 @@ import SwiftFP
 import XCTest
 @testable import SwiftCompose
 
-public extension SupplyComposableTest {
+public extension FunctionWTest {
   public func test_multipleComposition_shouldWork() {
     /// Setup
     var actualError: Error?
@@ -18,7 +18,7 @@ public extension SupplyComposableTest {
     var publishCount = 0
     let error = "Error"
     let dispatchQueue = DispatchQueue.global(qos: .background)
-    let fInt: Supplier<Int> = {throw FPError(error)}
+    let fInt: SupplierW<Int> = SupplierW({throw FPError(error)})
     let publishF: (Error) -> Void = {_ in publishCount += 1}
 
     let reset: () -> Void = {
@@ -29,10 +29,10 @@ public extension SupplyComposableTest {
 
     /// When & Then 1
     do {
-      actualResult = try SupplyComposable<Int>.publishError(publishF)
-        .compose(SupplyComposable.retry(retryCount!))
-        .compose(SupplyComposable.timeout(10)(dispatchQueue))
-        .wrap(fInt).invoke()
+      actualResult = try fInt.retry(retryCount!)
+        .publishError(publishF)
+        .timeout(10)(dispatchQueue)
+        .invoke()
     } catch let e {
       actualError = e
     }
@@ -45,10 +45,10 @@ public extension SupplyComposableTest {
     reset()
 
     do {
-      actualResult = try SupplyComposable<Int>.retry(retryCount!)
-        .compose(SupplyComposable.publishError(publishF))
-        .compose(SupplyComposable.timeout(10)(dispatchQueue))
-        .wrap(fInt).invoke()
+      actualResult = try fInt.publishError(publishF)
+        .retry(retryCount!)
+        .timeout(10)(dispatchQueue)
+        .invoke()
     } catch let e {
       actualError = e
     }
@@ -61,12 +61,13 @@ public extension SupplyComposableTest {
     reset()
 
     do {
-      actualResult = try SupplyComposable<Int>.retry(retryCount!)
-        .compose(SupplyComposable.retry(retryCount!))
-        .compose(SupplyComposable.publishError(publishF))
-        .compose(SupplyComposable.timeout(2)(dispatchQueue))
-        .compose(SupplyComposable.catchReturn(1)) // Nullify all above.
-        .wrap(fInt).invoke()
+      actualResult = try fInt.catchReturn(1)
+        .publishError(publishF)
+        .retry(retryCount!)
+        .retry(retryCount!)
+        .retry(retryCount!)
+        .timeout(2)(dispatchQueue)
+        .invoke(())
     } catch let e {
       actualError = e
     }
@@ -76,3 +77,4 @@ public extension SupplyComposableTest {
     XCTAssertEqual(publishCount, 0)
   }
 }
+

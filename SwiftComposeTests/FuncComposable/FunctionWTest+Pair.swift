@@ -9,7 +9,7 @@
 import XCTest
 @testable import SwiftCompose
 
-public extension FuncComposableTest {
+public extension FunctionWTest {
   public func test_composePair_shouldWork() {
     /// Setup
     var lastValue: Int?
@@ -18,7 +18,7 @@ public extension FuncComposableTest {
       lastValue = a
     }
 
-    let paired = FuncComposable.pair(pairF)
+    let paired = FunctionW.pair(pairF)
 
     /// When & Then
     for i in (0..<testCount!) {

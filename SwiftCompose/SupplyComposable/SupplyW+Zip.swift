@@ -6,14 +6,14 @@
 //  Copyright © 2018 Hai Pham. All rights reserved.
 //
 
-public extension SupplyComposable {
+public extension FunctionW where T == Void {
 
   /// Zip the results of a Sequence of Suppliers.
   ///
   /// - Parameter z: Zipper function.
   /// - Returns: A custom higher-order function.
-  public static func zip(_ z: @escaping ([T]) throws -> T) -> ([Supplier<T>]) -> Supplier<T> {
-    return {(ss: [Supplier<T>]) in
+  public static func zip(_ z: @escaping ([R]) throws -> R) -> ([Supplier<R>]) -> Supplier<R> {
+    return {(ss: [Supplier<R>]) in
       return {try z(ss.map({try $0()}))}
     }
   }
@@ -23,7 +23,7 @@ public extension SupplyComposable {
   ///
   /// - Parameter z: Zipper function.
   /// - Returns: A custom higher-order function.
-  public static func zipVarargs(_ z: @escaping ([T]) throws -> T) -> (Supplier<T>...) -> Supplier<T> {
-    return {(ss: Supplier<T>...) in zip(z)(ss.map({$0}))}
+  public static func zipVarargs(_ z: @escaping ([R]) throws -> R) -> (Supplier<R>...) -> Supplier<R> {
+    return {(ss: Supplier<R>...) in zip(z)(ss.map({$0}))}
   }
 }

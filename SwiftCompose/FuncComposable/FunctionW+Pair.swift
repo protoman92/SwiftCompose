@@ -1,12 +1,12 @@
 //
-//  File.swift
+//  FunctionW+Pair.swift
 //  SwiftCompose
 //
 //  Created by Hai Pham on 17/3/18.
 //  Copyright © 2018 Hai Pham. All rights reserved.
 //
 
-public extension FuncComposable {
+public extension FunctionW {
 
   /// Tracks the last value that was supplied as an argument, and include it
   /// together with the pair function.

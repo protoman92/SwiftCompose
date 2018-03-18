@@ -6,9 +6,6 @@
 //  Copyright © 2018 Hai Pham. All rights reserved.
 //
 
-/// Wrapper for a callback function.
-public typealias CallbackW<T> = FunctionW<T, Void>
-
 /// Extensions for CallbackW.
 public extension FunctionW where R == Void {
 
@@ -25,7 +22,7 @@ public extension FunctionW where R == Void {
       }
     }
 
-    return FuncComposable<T, Void>.pair(pairF)
+    return FunctionW<T, Void>.pair(pairF)
   }
 }
 

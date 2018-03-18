@@ -8,7 +8,7 @@
 
 import SwiftFP
 
-public extension SupplyComposable {
+public extension FunctionW where T == Void {
 
   /// Synchronize the result of an async operation. It is important that the
   /// calling queue and perform queue have the same constraints as those
@@ -17,12 +17,12 @@ public extension SupplyComposable {
   ///
   /// - Parameter callbackFn: An AsyncCallback instance.
   /// - Returns: A Supplier instance.
-  public static func sync(_ callbackFn: @escaping AsyncOperation<T>) -> Supplier<T> {
-    return {
+  public static func sync(_ callbackFn: @escaping AsyncOperation<R>) -> SupplierW<R> {
+    return SupplierW({
       let dispatchGroup = DispatchGroup()
-      var result: StrongReference<Try<T>>?
+      var result: StrongReference<Try<R>>?
 
-      let callback: AsyncCallback<T> = {(v: Try<T>) -> Void in
+      let callback: AsyncCallback<R> = {(v: Try<R>) -> Void in
         result = StrongReference(v)
         dispatchGroup.leave()
       }
@@ -36,6 +36,6 @@ public extension SupplyComposable {
       } else {
         throw FPError("Invalid result/error")
       }
-    }
+    })
   }
 }

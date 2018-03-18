@@ -1,8 +1,8 @@
 //
-//  SupplyComposableTest+Retry.swift
+//  FunctionWTest+Retry.swift
 //  SwiftComposeTests
 //
-//  Created by Hai Pham on 16/3/18.
+//  Created by Hai Pham on 18/3/18.
 //  Copyright © 2018 Hai Pham. All rights reserved.
 //
 
@@ -10,23 +10,21 @@ import SwiftFP
 import XCTest
 @testable import SwiftCompose
 
-public extension SupplyComposableTest {
+public extension FunctionWTest {
   public func test_composeRetry_shouldWork() {
     /// Setup
     var actualError: Error?
     var actualTryCount = 0
     let error = "Error!"
 
-    let fInt: Supplier<Int> = {
+    let sInt: SupplierW<Int> = SupplierW({
       actualTryCount += 1
       throw FPError(error)
-    }
-
-    let retryF = SupplyComposable<Int>.retry(retryCount!)
+    })
 
     /// When
     do {
-      _ = try retryF.wrap(fInt).invoke()
+      _ = try sInt.retry(retryCount!).invoke()
     } catch let e {
       actualError = e
     }
@@ -44,18 +42,16 @@ public extension SupplyComposableTest {
     let duration: TimeInterval = 0.2
     let error = "Error!"
 
-    let fInt: Supplier<Int> = {
+    let sInt: SupplierW<Int> = SupplierW({
       actualTryCount += 1
       throw FPError(error)
-    }
-
-    let retryF = SupplyComposable<Int>.retryWithDelay(retryCount!)(duration)
+    })
 
     /// When
     let start = Date()
 
     do {
-      _ = try retryF.wrap(fInt).invoke()
+      _ = try sInt.retryWithDelay(retryCount!)(duration).invoke()
     } catch let e {
       actualError = e
     }

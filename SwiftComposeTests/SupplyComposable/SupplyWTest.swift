@@ -1,5 +1,5 @@
 //
-//  SupplyComposable.swift
+//  SupplyWTest.swift
 //  SwiftComposeTests
 //
 //  Created by Hai Pham on 14/3/18.
@@ -10,7 +10,7 @@ import SwiftFP
 import XCTest
 @testable import SwiftCompose
 
-public final class SupplyComposableTest: XCTestCase {
+public final class SupplyWTest: XCTestCase {
   public var expectTimeout: TimeInterval!
   public var retryCount: Int!
 

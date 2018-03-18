@@ -1,14 +1,14 @@
 //
-//  SupplyComposable+Timeout.swift
+//  FunctionW+Timeout.swift
 //  SwiftCompose
 //
-//  Created by Hai Pham on 15/3/18.
+//  Created by Hai Pham on 18/3/18.
 //  Copyright © 2018 Hai Pham. All rights reserved.
 //
 
 import SwiftFP
 
-public extension SupplyComposable {
+public extension FunctionW {
 
   /// Times out an operation with a timeout error. For the second curried
   /// parameter, provide the DispatchQueue to run the operation on. The
@@ -20,17 +20,17 @@ public extension SupplyComposable {
   /// should be fine.
   ///
   /// - Parameter duration: A TimeInterval value.
-  /// - Returns: A Composable instance.
-  public static func timeout(_ duration: TimeInterval) -> (DispatchQueue) -> SupplyComposable<T> {
-    return {(dq: DispatchQueue) -> SupplyComposable<T> in
-      let sf: SupplierF<T> = {(s: @escaping Supplier<T>) -> Supplier<T> in
-        return {
+  /// - Returns: A custom higher order function.
+  public static func timeout(_ duration: TimeInterval) -> (DispatchQueue) -> FunctionF<T, R> {
+    return {(dq: DispatchQueue) -> FunctionF<T, R> in
+      return {(s: @escaping Function<T, R>) -> Function<T, R> in
+        return {(v: T) in
           let dispatchGroup = DispatchGroup()
-          var result: StrongReference<Try<T>>?
+          var result: StrongReference<Try<R>>?
           dispatchGroup.enter()
 
           dq.async {
-            result = StrongReference(Try(s))
+            result = StrongReference(Try<R>({try s(v)}))
             dispatchGroup.leave()
           }
 
@@ -43,8 +43,16 @@ public extension SupplyComposable {
           }
         }
       }
-
-      return SupplyComposable(sf)
     }
+  }
+
+  /// Convenience method to provide timeout functionalities.
+  ///
+  /// - Parameter duration: A TimeInterval value.
+  /// - Returns: A custom higher order function.
+  public func timeout(_ duration: TimeInterval) -> (DispatchQueue) -> FunctionW<T, R> {
+    return {(dq: DispatchQueue) in FunctionW({
+        try FunctionW.timeout(duration)(dq)(self.function)($0)
+    })}
   }
 }

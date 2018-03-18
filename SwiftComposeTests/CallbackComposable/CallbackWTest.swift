@@ -1,5 +1,5 @@
 //
-//  CallbackComposable.swift
+//  CallbackWTest.swift
 //  SwiftComposeTests
 //
 //  Created by Hai Pham on 18/3/18.
@@ -8,7 +8,7 @@
 
 import XCTest
 
-public final class CallbackComposableTest: XCTestCase {
+public final class CallbackWTest: XCTestCase {
   public var testCount: Int!
 
   override public func setUp() {

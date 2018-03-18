@@ -1,8 +1,8 @@
 //
-//  SupplyComposableTest+Timeout.swift
+//  FunctionWTest+Timeout.swift
 //  SwiftComposeTests
 //
-//  Created by Hai Pham on 16/3/18.
+//  Created by Hai Pham on 18/3/18.
 //  Copyright © 2018 Hai Pham. All rights reserved.
 //
 
@@ -10,7 +10,7 @@ import SwiftFP
 import XCTest
 @testable import SwiftCompose
 
-public extension SupplyComposableTest {
+public extension FunctionWTest {
   public func test_composeTimeout_shouldWork() {
     /// Setup
     var actualError1: Error?
@@ -20,27 +20,25 @@ public extension SupplyComposableTest {
     let timeout: TimeInterval = 1
     let dispatchQueue = DispatchQueue.global(qos: .background)
 
-    let fInt1: Supplier<Int> = {
+    let sInt1: SupplierW<Int> = SupplierW({
       Thread.sleep(forTimeInterval: timeout * 2)
       return 1
-    }
+    })
 
-    let fInt2: Supplier<Int> = {
+    let sInt2: SupplierW<Int> = SupplierW({
       Thread.sleep(forTimeInterval: timeout / 2)
       return 2
-    }
-
-    let timeoutF = SupplyComposable<Int>.timeout(timeout)(dispatchQueue)
+    })
 
     /// When
     do {
-      actualResult1 = try timeoutF.wrap(fInt1).invoke()
+      actualResult1 = try sInt1.timeout(timeout)(dispatchQueue).invoke()
     } catch let e {
       actualError1 = e
     }
 
     do {
-      actualResult2 = try timeoutF.wrap(fInt2).invoke()
+      actualResult2 = try sInt2.timeout(timeout)(dispatchQueue).invoke()
     } catch let e {
       actualError2 = e
     }
