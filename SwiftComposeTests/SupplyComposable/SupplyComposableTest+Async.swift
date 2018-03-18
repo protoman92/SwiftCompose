@@ -66,7 +66,7 @@ public extension SupplyComposableTest {
 
     callingDq.async {
       do {
-        actualResult = try composed.wrap(fInt)()
+        actualResult = try composed.wrap(fInt).invoke()
       } catch let e {
         actualError = e
       }

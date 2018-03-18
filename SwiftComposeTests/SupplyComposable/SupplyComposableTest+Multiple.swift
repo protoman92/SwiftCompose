@@ -32,7 +32,7 @@ public extension SupplyComposableTest {
       actualResult = try SupplyComposable<Int>.publishError(publishF)
         .compose(SupplyComposable.retry(retryCount!))
         .compose(SupplyComposable.timeout(10)(dispatchQueue))
-        .wrap(fInt)()
+        .wrap(fInt).invoke()
     } catch let e {
       actualError = e
     }
@@ -48,7 +48,7 @@ public extension SupplyComposableTest {
       actualResult = try SupplyComposable<Int>.retry(retryCount!)
         .compose(SupplyComposable.publishError(publishF))
         .compose(SupplyComposable.timeout(10)(dispatchQueue))
-        .wrap(fInt)()
+        .wrap(fInt).invoke()
     } catch let e {
       actualError = e
     }
@@ -66,7 +66,7 @@ public extension SupplyComposableTest {
         .compose(SupplyComposable.publishError(publishF))
         .compose(SupplyComposable.timeout(2)(dispatchQueue))
         .compose(SupplyComposable.catchReturn(1)) // Nullify all above.
-        .wrap(fInt)()
+        .wrap(fInt).invoke()
     } catch let e {
       actualError = e
     }

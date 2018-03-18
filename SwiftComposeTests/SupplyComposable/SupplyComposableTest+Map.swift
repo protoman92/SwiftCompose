@@ -15,7 +15,7 @@ public extension SupplyComposableTest {
     let fInt: Supplier<Int> = {1}
 
     /// When
-    let result = try? SupplyComposable.map({$0 * 2}).wrap(fInt)()
+    let result = try? SupplyComposable.map({$0 * 2}).wrap(fInt).invoke()
 
     /// Then
     XCTAssertEqual(result, 2)

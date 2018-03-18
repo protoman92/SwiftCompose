@@ -70,7 +70,7 @@ public extension SupplyComposableTest {
     do {
       actualResult = try SupplyComposable<String>.retry(retryCount!)
         .compose(SupplyComposable.publishError({_ in publishCount += 1}))
-        .wrap(SupplyComposable.sync(asyncOp))()
+        .wrap(SupplyComposable.sync(asyncOp)).invoke()
     } catch let e {
       actualError = e
     }

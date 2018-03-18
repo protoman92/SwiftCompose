@@ -22,7 +22,7 @@ public extension FuncComposableTest {
 
     /// When & Then
     for i in (0..<testCount!) {
-      try? paired(i)
+      try? paired.invoke(i)
 
       if i > 0 {
         XCTAssertEqual(lastValue!, i - 1)

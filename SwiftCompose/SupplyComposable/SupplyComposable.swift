@@ -20,10 +20,10 @@ public struct SupplyComposable<T> {
   /// Invoke the inner SupplierF.
   ///
   /// - Parameter s: A Supplier instance.
-  /// - Returns: A Supplier instance.
+  /// - Returns: A SupplierW instance.
   /// - Throws: If the operation fails.
-  public func wrap(_ s: @escaping Supplier<T>) throws -> Supplier<T> {
-    return try sf(s)
+  public func wrap(_ s: @escaping Supplier<T>) throws -> SupplierW<T> {
+    return try SupplierW(sf(s))
   }
 
   /// Invoke the inner Supplier asynchronously with a provided DispatchQueue
@@ -42,7 +42,7 @@ public struct SupplyComposable<T> {
         return {
           dq.async {
             do {
-              try onNext(Try.success(self.wrap(s)()))
+              try onNext(Try.success(self.wrap(s).invoke()))
             } catch let e {
               onNext(Try.failure(e))
             }
@@ -58,7 +58,7 @@ public struct SupplyComposable<T> {
   /// - Returns: A Composable instance.
   public func compose(_ sf: @escaping SupplierF<T>) -> SupplyComposable<T> {
     let newSf: SupplierF<T> = {(s: @escaping Supplier<T>) -> Supplier<T> in
-      return try self.wrap(sf(s))
+      return {try self.wrap(sf(s)).invoke()}
     }
 
     return SupplyComposable(newSf)

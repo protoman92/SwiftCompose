@@ -25,7 +25,7 @@ public extension SupplyComposableTest {
     let publishC = SupplyComposable.publish(publishF)
 
     /// When
-    let result = try! publishC.wrap(fInt)()
+    let result = try! publishC.wrap(fInt).invoke()
 
     /// Then
     XCTAssertEqual(result, value)

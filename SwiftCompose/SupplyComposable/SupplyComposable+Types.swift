@@ -17,5 +17,5 @@ public typealias AsyncOperation<T> = (@escaping AsyncCallback<T>) -> Void
 /// Supplier represents a function that returns some data.
 public typealias Supplier<T> = () throws -> T
 
-/// SupplierF represents a function that maps a Supplier to another Supplier.
+/// SupplierF represents a function that maps a SupplierW to another Supplier.
 public typealias SupplierF<T> = (@escaping Supplier<T>) throws -> Supplier<T>

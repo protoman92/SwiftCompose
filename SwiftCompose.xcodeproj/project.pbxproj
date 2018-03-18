@@ -11,6 +11,8 @@
 		53ECE44662FA389AF6E60DD5 /* Pods_SwiftCompose.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C14790471E4B34796705F38 /* Pods_SwiftCompose.framework */; };
 		D312BF60205E2A5800F366A5 /* FuncComposable+Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = D312BF5F205E2A5800F366A5 /* FuncComposable+Map.swift */; };
 		D312BF62205E2BB700F366A5 /* FuncComposableTest+Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = D312BF61205E2BB700F366A5 /* FuncComposableTest+Map.swift */; };
+		D312BF64205E496700F366A5 /* SupplierW.swift in Sources */ = {isa = PBXBuildFile; fileRef = D312BF63205E496700F366A5 /* SupplierW.swift */; };
+		D312BF66205E4E8800F366A5 /* FunctionW.swift in Sources */ = {isa = PBXBuildFile; fileRef = D312BF65205E4E8800F366A5 /* FunctionW.swift */; };
 		D315FE88205B687A0050CED0 /* SupplyComposable+Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = D315FE87205B687A0050CED0 /* SupplyComposable+Types.swift */; };
 		D3EAEDA7205AE0B20033CF62 /* SwiftCompose.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3EAED9D205AE0B20033CF62 /* SwiftCompose.framework */; };
 		D3EAEDAE205AE0B20033CF62 /* SwiftCompose.h in Headers */ = {isa = PBXBuildFile; fileRef = D3EAEDA0205AE0B20033CF62 /* SwiftCompose.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -61,6 +63,8 @@
 		AA82CDD04C43325CDB7A57DC /* Pods_SwiftComposeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftComposeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D312BF5F205E2A5800F366A5 /* FuncComposable+Map.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FuncComposable+Map.swift"; sourceTree = "<group>"; };
 		D312BF61205E2BB700F366A5 /* FuncComposableTest+Map.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FuncComposableTest+Map.swift"; sourceTree = "<group>"; };
+		D312BF63205E496700F366A5 /* SupplierW.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupplierW.swift; sourceTree = "<group>"; };
+		D312BF65205E4E8800F366A5 /* FunctionW.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunctionW.swift; sourceTree = "<group>"; };
 		D315FE87205B687A0050CED0 /* SupplyComposable+Types.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SupplyComposable+Types.swift"; sourceTree = "<group>"; };
 		D3EAED9D205AE0B20033CF62 /* SwiftCompose.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftCompose.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3EAEDA0205AE0B20033CF62 /* SwiftCompose.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftCompose.h; sourceTree = "<group>"; };
@@ -187,6 +191,7 @@
 		D3FBD4D8205D538300CF0CEB /* SupplyComposable */ = {
 			isa = PBXGroup;
 			children = (
+				D312BF63205E496700F366A5 /* SupplierW.swift */,
 				D3EAEDBE205AE23C0033CF62 /* SupplyComposable.swift */,
 				D3EAEDBD205AE23C0033CF62 /* SupplyComposable+Catch.swift */,
 				D3EAEDB7205AE23C0033CF62 /* SupplyComposable+Map.swift */,
@@ -222,9 +227,10 @@
 			isa = PBXGroup;
 			children = (
 				D3FBD4DB205D544F00CF0CEB /* FuncComposable.swift */,
-				D3FBD4DD205D547300CF0CEB /* FuncComposable+Types.swift */,
-				D3FBD4DF205D576100CF0CEB /* FuncComposable+Pair.swift */,
 				D312BF5F205E2A5800F366A5 /* FuncComposable+Map.swift */,
+				D3FBD4DF205D576100CF0CEB /* FuncComposable+Pair.swift */,
+				D3FBD4DD205D547300CF0CEB /* FuncComposable+Types.swift */,
+				D312BF65205E4E8800F366A5 /* FunctionW.swift */,
 			);
 			path = FuncComposable;
 			sourceTree = "<group>";
@@ -458,6 +464,8 @@
 				D3FBD4DE205D547300CF0CEB /* FuncComposable+Types.swift in Sources */,
 				D3EAEDC0205AE23D0033CF62 /* SupplyComposable+Noop.swift in Sources */,
 				D315FE88205B687A0050CED0 /* SupplyComposable+Types.swift in Sources */,
+				D312BF64205E496700F366A5 /* SupplierW.swift in Sources */,
+				D312BF66205E4E8800F366A5 /* FunctionW.swift in Sources */,
 				D3EAEDC4205AE23D0033CF62 /* SupplyComposable+Retry.swift in Sources */,
 				D3EAEDC5205AE23D0033CF62 /* SupplyComposable+Catch.swift in Sources */,
 				D3EAEDC2205AE23D0033CF62 /* SupplyComposable+Sync.swift in Sources */,

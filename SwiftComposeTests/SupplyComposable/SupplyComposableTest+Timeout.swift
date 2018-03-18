@@ -34,13 +34,13 @@ public extension SupplyComposableTest {
 
     /// When
     do {
-      actualResult1 = try timeoutF.wrap(fInt1)()
+      actualResult1 = try timeoutF.wrap(fInt1).invoke()
     } catch let e {
       actualError1 = e
     }
 
     do {
-      actualResult2 = try timeoutF.wrap(fInt2)()
+      actualResult2 = try timeoutF.wrap(fInt2).invoke()
     } catch let e {
       actualError2 = e
     }

@@ -26,7 +26,7 @@ public extension SupplyComposableTest {
 
     /// When
     do {
-      _ = try retryF.wrap(fInt)()
+      _ = try retryF.wrap(fInt).invoke()
     } catch let e {
       actualError = e
     }
@@ -55,7 +55,7 @@ public extension SupplyComposableTest {
     let start = Date()
 
     do {
-      _ = try retryF.wrap(fInt)()
+      _ = try retryF.wrap(fInt).invoke()
     } catch let e {
       actualError = e
     }

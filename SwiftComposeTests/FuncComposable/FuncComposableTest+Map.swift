@@ -23,7 +23,7 @@ public extension FuncComposableTest {
       }
     }
 
-    let composed = FuncComposable<String, String>.mapArg(mapF)(f)
+    let composed = FuncComposable<String, String>.mapArg(mapF).wrap(f)
 
     /// When
     let t1: Try<String> = Try({try composed("1")})
@@ -32,5 +32,16 @@ public extension FuncComposableTest {
     /// Then
     XCTAssertEqual(t1.value, "1")
     XCTAssertTrue(t2.isFailure)
+  }
+
+  public func test_functionWMapArg_shouldWork() {
+    /// Setup
+    let f = FunctionW<String, Int>({Int($0)!})
+    let f1 = f.mapArg({(a: Int) in String(describing: a)})
+    let f2 = f1.map({String(describing: $0)})
+
+    /// When & Then
+    XCTAssertEqual(try! f1.invoke(1), 1)
+    XCTAssertEqual(try! f2.invoke(1), "1")
   }
 }

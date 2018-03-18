@@ -19,7 +19,7 @@ public extension SupplyComposableTest {
 
     /// When
     do {
-      actualResult = try SupplyComposable.catch({_ in 1}).wrap(fInt)()
+      actualResult = try SupplyComposable.catch({_ in 1}).wrap(fInt).invoke()
     } catch let e {
       actualError = e
     }
@@ -37,7 +37,7 @@ public extension SupplyComposableTest {
 
     /// When
     do {
-      actualResult = try SupplyComposable.catchReturn(100).wrap(fInt)()
+      actualResult = try SupplyComposable.catchReturn(100).wrap(fInt).invoke()
     } catch let e {
       actualError = e
     }
@@ -55,7 +55,7 @@ public extension SupplyComposableTest {
 
     /// When
     do {
-      actualResult = try SupplyComposable.catch({throw $0}).wrap(fInt)()
+      actualResult = try SupplyComposable.catch({throw $0}).wrap(fInt).invoke()
     } catch let e {
       actualError = e
     }
