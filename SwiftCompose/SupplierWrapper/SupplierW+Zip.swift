@@ -6,7 +6,7 @@
 //  Copyright © 2018 Hai Pham. All rights reserved.
 //
 
-public extension SupplierW {
+public extension SupplierWrapperType {
 
   /// Zip the results of a Sequence of Suppliers.
   ///

@@ -6,14 +6,14 @@
 //  Copyright © 2018 Hai Pham. All rights reserved.
 //
 
-public extension CallbackW {
+public extension CallbackWrapperType {
 
   /// Filter the input argument with a filter selector.
   ///
   /// - Parameter f: Selector function.
-  /// - Returns: A CallbackW instance.
-  public func filter(_ f: @escaping (T) throws -> Bool) -> CallbackW<T> {
-    return CallbackW({
+  /// - Returns: A Self instance.
+  public func filter(_ f: @escaping (T) throws -> Bool) -> Self {
+    return Self({
       guard try f($0) else { return  }
       _ = try self.invoke($0)
     })

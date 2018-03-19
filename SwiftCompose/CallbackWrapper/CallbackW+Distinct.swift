@@ -8,13 +8,13 @@
 
 import SwiftFP
 
-public extension CallbackW {
+public extension CallbackWrapperType {
 
   /// Do not invoke the callback while the arguments have not changed.
   ///
   /// - Parameter c: Comparison function. Return true if different.
-  /// - Returns: A CallbackW instance.
-  public func distinctUntilChanged(_ c: @escaping (T, T) throws -> Bool) -> CallbackW<T> {
+  /// - Returns: A Self instance.
+  public func distinctUntilChanged(_ c: @escaping (T, T) throws -> Bool) -> Self {
     let pairF: PairFunction<T, Void> = {
       if $0 == nil {
         _ = try self.invoke($1)
@@ -23,26 +23,26 @@ public extension CallbackW {
       }
     }
 
-    return CallbackW<T>.pair(pairF)
+    return Self.pair(pairF)
   }
 }
 
-public extension CallbackW where T: Equatable {
+public extension CallbackWrapperType where T: Equatable {
 
   /// Convenience function that makes use of equatability.
   ///
-  /// - Returns: A CallbackW instance.
-  public func distinctUntilChanged() -> CallbackW<T> {
+  /// - Returns: A CallbackWrapperType instance.
+  public func distinctUntilChanged() -> Self {
     return distinctUntilChanged({$0 != $1})
   }
 }
 
-public extension CallbackW where T: TryConvertibleType, T.Val: Equatable {
+public extension CallbackWrapperType where T: TryConvertibleType, T.Val: Equatable {
 
   /// Convenience function that makes use of equatability.
   ///
-  /// - Returns: A CallbackW instance.
-  public func distinctUntilChanged() -> CallbackW<T> {
+  /// - Returns: A Self instance.
+  public func distinctUntilChanged() -> Self {
     return distinctUntilChanged({$0.asTry().value != $1.asTry().value})
   }
 }

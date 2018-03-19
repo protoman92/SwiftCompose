@@ -21,6 +21,12 @@ extension CallbackW: FunctionWrapperConvertibleType {
   }
 }
 
+extension CallbackW: CallbackWrapperConvertibleType {
+  public func asCallbackWrapper() -> CallbackW<T> {
+    return self
+  }
+}
+
 extension CallbackW: CallbackWrapperType {}
 
 public extension FunctionW where R == Void {
@@ -28,7 +34,7 @@ public extension FunctionW where R == Void {
   /// Convert the current function wrapper to a callback wrapper.
   ///
   /// - Returns: A CallbackW instance.
-  public func toCallbackWrapper() -> CallbackW<T> {
+  public func asCallbackWrapper() -> CallbackW<T> {
     return CallbackW(function)
   }
 }

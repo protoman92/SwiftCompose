@@ -25,6 +25,12 @@ extension SupplierW: FunctionWrapperConvertibleType {
   }
 }
 
+extension SupplierW: SupplierWrapperConvertibleType {
+  public func asSupplierWrapper() -> SupplierW<R> {
+    return SupplierW(function)
+  }
+}
+
 extension SupplierW: SupplierWrapperType {}
 
 public extension FunctionW where T == Void {
@@ -32,7 +38,7 @@ public extension FunctionW where T == Void {
   /// Convert the current function wrapper to a supplier wrapper.
   ///
   /// - Returns: A SupplierW instance.
-  public func toSupplierWrapper() -> SupplierW<R> {
+  public func asSupplierWrapper() -> SupplierW<R> {
     return SupplierW(function)
   }
 }

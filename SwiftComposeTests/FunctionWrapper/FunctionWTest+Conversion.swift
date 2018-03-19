@@ -17,9 +17,9 @@ public extension FunctionWTest {
 
     let f1 = FunctionW<Int, Int>({$0})
       .map({_ in ()})
-      .toCallbackWrapper()
+      .asCallbackWrapper()
       .mapArg({(a: Void) in throw FPError(error)})
-      .toSupplierWrapper()
+      .asSupplierWrapper()
 
     /// When
     do {

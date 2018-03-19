@@ -14,6 +14,12 @@
 		D310F4CC205F4D42005EF1BF /* CallbackWrapperType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D310F4CB205F4D42005EF1BF /* CallbackWrapperType.swift */; };
 		D310F4CE205F4DAE005EF1BF /* SupplierWrapperType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D310F4CD205F4DAE005EF1BF /* SupplierWrapperType.swift */; };
 		D310F4D0205F4EED005EF1BF /* FunctionWTest+Conversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = D310F4CF205F4EED005EF1BF /* FunctionWTest+Conversion.swift */; };
+		D310F4D6205F55A6005EF1BF /* FailableCallbackWrapperType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D310F4D5205F55A6005EF1BF /* FailableCallbackWrapperType.swift */; };
+		D310F4D8205F55DF005EF1BF /* FailableCallbackW.swift in Sources */ = {isa = PBXBuildFile; fileRef = D310F4D7205F55DF005EF1BF /* FailableCallbackW.swift */; };
+		D310F4DA205F55EC005EF1BF /* FailableCallbackW+Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = D310F4D9205F55EC005EF1BF /* FailableCallbackW+Types.swift */; };
+		D310F4DC205F56CD005EF1BF /* FailableCallbackW+Skip.swift in Sources */ = {isa = PBXBuildFile; fileRef = D310F4DB205F56CD005EF1BF /* FailableCallbackW+Skip.swift */; };
+		D310F4DF205F59D6005EF1BF /* FailableCallbackWTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D310F4DE205F59D6005EF1BF /* FailableCallbackWTest.swift */; };
+		D310F4E1205F59FE005EF1BF /* FailableCallbackWTest+Skip.swift in Sources */ = {isa = PBXBuildFile; fileRef = D310F4E0205F59FE005EF1BF /* FailableCallbackWTest+Skip.swift */; };
 		D312BF62205E2BB700F366A5 /* FunctionWTest+Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = D312BF61205E2BB700F366A5 /* FunctionWTest+Map.swift */; };
 		D312BF64205E496700F366A5 /* SupplierW.swift in Sources */ = {isa = PBXBuildFile; fileRef = D312BF63205E496700F366A5 /* SupplierW.swift */; };
 		D312BF66205E4E8800F366A5 /* FunctionW.swift in Sources */ = {isa = PBXBuildFile; fileRef = D312BF65205E4E8800F366A5 /* FunctionW.swift */; };
@@ -72,6 +78,12 @@
 		D310F4CB205F4D42005EF1BF /* CallbackWrapperType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallbackWrapperType.swift; sourceTree = "<group>"; };
 		D310F4CD205F4DAE005EF1BF /* SupplierWrapperType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupplierWrapperType.swift; sourceTree = "<group>"; };
 		D310F4CF205F4EED005EF1BF /* FunctionWTest+Conversion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FunctionWTest+Conversion.swift"; sourceTree = "<group>"; };
+		D310F4D5205F55A6005EF1BF /* FailableCallbackWrapperType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FailableCallbackWrapperType.swift; sourceTree = "<group>"; };
+		D310F4D7205F55DF005EF1BF /* FailableCallbackW.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FailableCallbackW.swift; sourceTree = "<group>"; };
+		D310F4D9205F55EC005EF1BF /* FailableCallbackW+Types.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FailableCallbackW+Types.swift"; sourceTree = "<group>"; };
+		D310F4DB205F56CD005EF1BF /* FailableCallbackW+Skip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FailableCallbackW+Skip.swift"; sourceTree = "<group>"; };
+		D310F4DE205F59D6005EF1BF /* FailableCallbackWTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FailableCallbackWTest.swift; sourceTree = "<group>"; };
+		D310F4E0205F59FE005EF1BF /* FailableCallbackWTest+Skip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FailableCallbackWTest+Skip.swift"; sourceTree = "<group>"; };
 		D312BF61205E2BB700F366A5 /* FunctionWTest+Map.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FunctionWTest+Map.swift"; sourceTree = "<group>"; };
 		D312BF63205E496700F366A5 /* SupplierW.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupplierW.swift; sourceTree = "<group>"; };
 		D312BF65205E4E8800F366A5 /* FunctionW.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunctionW.swift; sourceTree = "<group>"; };
@@ -155,6 +167,26 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		D310F4D4205F5596005EF1BF /* TryCallbackWrapper */ = {
+			isa = PBXGroup;
+			children = (
+				D310F4D5205F55A6005EF1BF /* FailableCallbackWrapperType.swift */,
+				D310F4D7205F55DF005EF1BF /* FailableCallbackW.swift */,
+				D310F4D9205F55EC005EF1BF /* FailableCallbackW+Types.swift */,
+				D310F4DB205F56CD005EF1BF /* FailableCallbackW+Skip.swift */,
+			);
+			path = TryCallbackWrapper;
+			sourceTree = "<group>";
+		};
+		D310F4DD205F59C4005EF1BF /* FailableCallbackWrapper */ = {
+			isa = PBXGroup;
+			children = (
+				D310F4DE205F59D6005EF1BF /* FailableCallbackWTest.swift */,
+				D310F4E0205F59FE005EF1BF /* FailableCallbackWTest+Skip.swift */,
+			);
+			path = FailableCallbackWrapper;
+			sourceTree = "<group>";
+		};
 		D318D6FC205E69B200CBD754 /* CallbackWrapper */ = {
 			isa = PBXGroup;
 			children = (
@@ -202,6 +234,7 @@
 		D3EAED9F205AE0B20033CF62 /* SwiftCompose */ = {
 			isa = PBXGroup;
 			children = (
+				D310F4D4205F5596005EF1BF /* TryCallbackWrapper */,
 				D318D6FC205E69B200CBD754 /* CallbackWrapper */,
 				D3FBD4DA205D544000CF0CEB /* FunctionWrapper */,
 				D3EAEDA1205AE0B20033CF62 /* Info.plist */,
@@ -215,6 +248,7 @@
 		D3EAEDAA205AE0B20033CF62 /* SwiftComposeTests */ = {
 			isa = PBXGroup;
 			children = (
+				D310F4DD205F59C4005EF1BF /* FailableCallbackWrapper */,
 				D318D6FF205E715700CBD754 /* CallbackWrapper */,
 				D3FBD4E1205D5D2E00CF0CEB /* FunctionWrapper */,
 				D3EAEDAD205AE0B20033CF62 /* Info.plist */,
@@ -494,6 +528,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D3EAEDDD205AEF4C0033CF62 /* SupplierW+Zip.swift in Sources */,
+				D310F4D6205F55A6005EF1BF /* FailableCallbackWrapperType.swift in Sources */,
 				D3FBD4DE205D547300CF0CEB /* FunctionW+Types.swift in Sources */,
 				D318D70F205EA0B300CBD754 /* FunctionW+Publish.swift in Sources */,
 				D310F4CE205F4DAE005EF1BF /* SupplierWrapperType.swift in Sources */,
@@ -501,11 +536,13 @@
 				D318D71F205ED31500CBD754 /* CallbackW+Distinct.swift in Sources */,
 				D318D715205EA47B00CBD754 /* FunctionW+Retry.swift in Sources */,
 				D318D721205ED8C400CBD754 /* CallbackW+Filter.swift in Sources */,
+				D310F4DA205F55EC005EF1BF /* FailableCallbackW+Types.swift in Sources */,
 				D318D719205EB7C400CBD754 /* FunctionW+Timeout.swift in Sources */,
 				D315FE88205B687A0050CED0 /* SupplierW+Types.swift in Sources */,
 				D310F4CC205F4D42005EF1BF /* CallbackWrapperType.swift in Sources */,
 				D312BF64205E496700F366A5 /* SupplierW.swift in Sources */,
 				D312BF66205E4E8800F366A5 /* FunctionW.swift in Sources */,
+				D310F4D8205F55DF005EF1BF /* FailableCallbackW.swift in Sources */,
 				D3EAEDC2205AE23D0033CF62 /* SupplierW+Sync.swift in Sources */,
 				D3FBD4E0205D576100CF0CEB /* FunctionW+Pair.swift in Sources */,
 				D3FBD4E8205D5D6A00CF0CEB /* StrongReference.swift in Sources */,
@@ -513,6 +550,7 @@
 				D318D709205E9E4500CBD754 /* FunctionW+Catch.swift in Sources */,
 				D310F4CA205F4D37005EF1BF /* CallbackW.swift in Sources */,
 				D310F4C8205F4130005EF1BF /* FunctionWrapperType.swift in Sources */,
+				D310F4DC205F56CD005EF1BF /* FailableCallbackW+Skip.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -520,6 +558,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D310F4E1205F59FE005EF1BF /* FailableCallbackWTest+Skip.swift in Sources */,
 				D3FBD4E5205D5D5B00CF0CEB /* FunctionWTest+Pair.swift in Sources */,
 				D318D71B205EB92600CBD754 /* FunctionWTest+Timeout.swift in Sources */,
 				D318D701205E716B00CBD754 /* CallbackWTest.swift in Sources */,
@@ -529,6 +568,7 @@
 				D318D711205EA14200CBD754 /* FunctionWTest+Publish.swift in Sources */,
 				D310F4D0205F4EED005EF1BF /* FunctionWTest+Conversion.swift in Sources */,
 				D312BF62205E2BB700F366A5 /* FunctionWTest+Map.swift in Sources */,
+				D310F4DF205F59D6005EF1BF /* FailableCallbackWTest.swift in Sources */,
 				D3FBD4E3205D5D3B00CF0CEB /* FunctionWTest.swift in Sources */,
 				D3EAEDD7205AE5350033CF62 /* FunctionWTest+Multiple.swift in Sources */,
 				D3EAEDDF205AF0AB0033CF62 /* SupplyWTest+Zip.swift in Sources */,
