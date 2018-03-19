@@ -167,7 +167,7 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		D310F4D4205F5596005EF1BF /* TryCallbackWrapper */ = {
+		D310F4D4205F5596005EF1BF /* FailableCallbackWrapper */ = {
 			isa = PBXGroup;
 			children = (
 				D310F4D5205F55A6005EF1BF /* FailableCallbackWrapperType.swift */,
@@ -175,7 +175,7 @@
 				D310F4D9205F55EC005EF1BF /* FailableCallbackW+Types.swift */,
 				D310F4DB205F56CD005EF1BF /* FailableCallbackW+Skip.swift */,
 			);
-			path = TryCallbackWrapper;
+			path = FailableCallbackWrapper;
 			sourceTree = "<group>";
 		};
 		D310F4DD205F59C4005EF1BF /* FailableCallbackWrapper */ = {
@@ -234,7 +234,7 @@
 		D3EAED9F205AE0B20033CF62 /* SwiftCompose */ = {
 			isa = PBXGroup;
 			children = (
-				D310F4D4205F5596005EF1BF /* TryCallbackWrapper */,
+				D310F4D4205F5596005EF1BF /* FailableCallbackWrapper */,
 				D318D6FC205E69B200CBD754 /* CallbackWrapper */,
 				D3FBD4DA205D544000CF0CEB /* FunctionWrapper */,
 				D3EAEDA1205AE0B20033CF62 /* Info.plist */,

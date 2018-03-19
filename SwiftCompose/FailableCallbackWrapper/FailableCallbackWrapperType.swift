@@ -8,6 +8,7 @@
 
 import SwiftFP
 
-public protocol CallbackTryWrapperType: FunctionWrapperType where T == Try<Val> {
+/// Represents a callback that has a Try/Optional as the input argument.
+public protocol FailableCallbackWrapperType: CallbackWrapperType where T: TryConvertibleType, T.Val == Val {
   associatedtype Val
 }
