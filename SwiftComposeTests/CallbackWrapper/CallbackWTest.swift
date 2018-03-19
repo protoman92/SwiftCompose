@@ -6,7 +6,9 @@
 //  Copyright © 2018 Hai Pham. All rights reserved.
 //
 
+import SwiftFP
 import XCTest
+@testable import SwiftCompose
 
 public final class CallbackWTest: XCTestCase {
   public var testCount: Int!
@@ -14,5 +16,22 @@ public final class CallbackWTest: XCTestCase {
   override public func setUp() {
     super.setUp()
     testCount = 1000
+  }
+
+  public func test_convertToFunctionWrapper_shouldWork() {
+    /// Setup
+    let error = "Error"
+
+    let sInt = CallbackW<Int>({_ in throw FPError(error)})
+      .asCallbackWrapper()
+      .asFunctionWrapper()
+
+    /// When & Then
+    do {
+      _ = try sInt.invoke(0)
+      XCTFail("Should not have completed")
+    } catch let e {
+      XCTAssertEqual(e.localizedDescription, error)
+    }
   }
 }

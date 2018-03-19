@@ -51,8 +51,17 @@ public extension FunctionWrapperType {
   /// - Parameter duration: A TimeInterval value.
   /// - Returns: A custom higher order function.
   public func timeout(_ duration: TimeInterval) -> (DispatchQueue) -> Self {
-    return {(dq: DispatchQueue) in Self({
+    return {(dq: DispatchQueue) in
+      let function: Function<T, R> = {
         try FunctionW.timeout(duration)(dq)(self.function)($0)
-    })}
+      }
+
+      #if DEBUG
+        let description = self.appendDescription("Added timeout for \(duration)")
+        return Self(function, description)
+      #else
+        return Self(function)
+      #endif
+    }
   }
 }

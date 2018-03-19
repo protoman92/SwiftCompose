@@ -18,7 +18,7 @@ public extension FunctionWrapperType {
     assert(times >= 0, "Expected retry to be more than 0, but got \(times)")
 
     return {(s: @escaping (Int, T) throws -> R) -> Self in
-      return Self({
+      let function: Function<T, R> = ({
         var current = 0
 
         while true {
@@ -33,6 +33,13 @@ public extension FunctionWrapperType {
           current += 1
         }
       })
+
+      #if DEBUG
+        let description = "Added retry for \(times) times"
+        return Self(function, description)
+      #else
+        return Self(function)
+      #endif
     }
   }
 
@@ -59,7 +66,15 @@ public extension FunctionWrapperType {
   /// - Parameter times: The number of times to retry.
   /// - Returns: A Self instance.
   public func retry(_ times: Int) -> Self {
-    return Self.retryWithCount(times)({try self.invoke($1)})
+    let retried = Self.retryWithCount(times)({try self.invoke($1)})
+
+    #if DEBUG
+      let function: Function<T, R> = {try retried.invoke($0)}
+      let description = appendDescription(retried.description)
+      return Self(function, description)
+    #else
+      return retried
+    #endif
   }
 
   /// Curry to provide retry and delay capabilities. Provide seconds for the
@@ -69,7 +84,19 @@ public extension FunctionWrapperType {
   /// - Returns: A custom higher order function.
   public func retryWithDelay(_ times: Int) -> (TimeInterval) -> Self {
     return {(d: TimeInterval) in
-      return Self{try FunctionW.retryWithDelay(times)(d)(self.function)($0)}
+      let function: Function<T, R> = {
+        try FunctionW.retryWithDelay(times)(d)(self.function)($0)
+      }
+
+      #if DEBUG
+        let description = self.appendDescription("" +
+          "Added retry for \(times) " +
+          "with \(d) delay between retries")
+
+        return Self(function, description)
+      #else
+        return Self(function)
+      #endif
     }
   }
 }

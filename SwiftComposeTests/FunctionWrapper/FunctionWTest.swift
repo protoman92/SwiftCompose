@@ -6,6 +6,7 @@
 //  Copyright © 2018 Hai Pham. All rights reserved.
 //
 
+import SwiftFP
 import XCTest
 @testable import SwiftCompose
 
@@ -19,5 +20,25 @@ public final class FunctionWTest: XCTestCase {
     expectTimeout = 10
     retryCount = 100000
     testCount = 1000
+  }
+
+  public func test_convertToCallbackAndSupplier_shouldWork() {
+    /// Setup
+    let error = "Error!"
+
+    let f1 = FunctionW<Int, Int>({$0})
+      .asFunctionWrapper()
+      .map({_ in ()})
+      .asCallbackWrapper()
+      .mapArg({(a: Void) in throw FPError(error)})
+      .asSupplierWrapper()
+
+    /// When
+    do {
+      _ = try f1.invoke()
+      XCTFail("Should not have completed")
+    } catch let e {
+      XCTAssertEqual(e.localizedDescription, error)
+    }
   }
 }

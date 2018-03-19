@@ -13,9 +13,16 @@ public extension CallbackWrapperType {
   /// - Parameter f: Selector function.
   /// - Returns: A Self instance.
   public func filter(_ f: @escaping (T) throws -> Bool) -> Self {
-    return Self({
+    let callback: Callback<T> = ({      
       guard try f($0) else { return  }
       _ = try self.invoke($0)
     })
+
+    #if DEBUG
+      let description = appendDescription("Added filter")
+      return Self(callback, description)
+    #else
+      return Self(callback)
+    #endif
   }
 }

@@ -10,8 +10,21 @@
 public struct SupplierW<R> {
   public var function: Function<Void, R>
 
+  #if DEBUG
+    public let description: String
+
+    public init(_ supplier: @escaping Function<Void, R>, _ description: String) {
+      self.description = description
+      self.function = supplier
+    }
+  #endif
+
   public init(_ supplier: @escaping Function<Void, R>) {
     self.function = supplier
+
+    #if DEBUG
+      description = String(describing: SupplierW.self)
+    #endif
   }
 
   public func invoke() throws -> R {
@@ -21,17 +34,29 @@ public struct SupplierW<R> {
 
 extension SupplierW: FunctionWrapperConvertibleType {
   public func asFunctionWrapper() -> FunctionW<Void, R> {
-    return FunctionW(function)
+    #if DEBUG
+      return FunctionW(function, description)
+    #else
+      return FunctionW(function)
+    #endif
   }
 }
 
 extension SupplierW: SupplierWrapperConvertibleType {
   public func asSupplierWrapper() -> SupplierW<R> {
-    return SupplierW(function)
+    #if DEBUG
+      return SupplierW(function, description)
+    #else
+      return SupplierW(function)
+    #endif
   }
 }
 
 extension SupplierW: SupplierWrapperType {}
+
+#if DEBUG
+  extension SupplierW: CustomStringConvertible {}
+#endif
 
 public extension FunctionW where T == Void {
 
@@ -39,6 +64,10 @@ public extension FunctionW where T == Void {
   ///
   /// - Returns: A SupplierW instance.
   public func asSupplierWrapper() -> SupplierW<R> {
-    return SupplierW(function)
+    #if DEBUG
+      return SupplierW(function, description)
+    #else
+      return SupplierW(function)
+    #endif
   }
 }

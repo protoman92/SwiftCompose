@@ -15,8 +15,16 @@ public extension FunctionWrapperType {
   /// - Parameter m: Mapper function.
   /// - Returns: A Self instance.
   public func mapArg<T1>(_ m: @escaping (T1) throws -> T) -> FunctionW<T1, R> {
-    let f1: Function<T1, R> = ({try self.invoke(m($0))})
-    return FunctionW(f1)
+    let f1: Function<T1, R> = ({
+      return try self.invoke(m($0))
+    })
+
+    #if DEBUG
+      let description = appendDescription("Added mapArg")
+      return FunctionW(f1, description)
+    #else
+      return FunctionW(f1)
+    #endif
   }
 
   /// Map the return value to another type.
@@ -25,6 +33,12 @@ public extension FunctionWrapperType {
   /// - Returns: A Self instance.
   public func map<R1>(_ m: @escaping (R) throws -> R1) -> FunctionW<T, R1> {
     let f1: Function<T, R1> = ({try m(self.invoke($0))})
-    return FunctionW(f1)
+
+    #if DEBUG
+      let description = appendDescription("Added map")
+      return FunctionW(f1, description)
+    #else
+      return FunctionW(f1)
+    #endif
   }
 }

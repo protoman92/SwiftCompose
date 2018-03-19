@@ -18,7 +18,7 @@ public extension SupplierWrapperType {
   /// - Parameter callbackFn: An AsyncCallback instance.
   /// - Returns: A Self instance.
   public static func sync(_ callbackFn: @escaping AsyncOperation<R>) -> Self {
-    return Self({
+    let function: Supplier<R> = ({
       let dispatchGroup = DispatchGroup()
       var result: StrongReference<Try<R>>?
 
@@ -37,5 +37,12 @@ public extension SupplierWrapperType {
         throw FPError("Invalid result/error")
       }
     })
+
+    #if DEBUG
+      let description = "Added sync for callback"
+      return Self(function, description)
+    #else
+      return Self(function)
+    #endif
   }
 }

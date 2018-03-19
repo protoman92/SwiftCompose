@@ -13,13 +13,20 @@ public extension FunctionWrapperType {
   /// - Parameter c: A Error transform function.
   /// - Returns: A Self instance.
   public func `catch`(_ c: @escaping (Error) throws -> R) -> Self {
-    return Self({
+    let function: Function<T, R> = ({
       do {
         return try self.invoke($0)
       } catch let e {
         return try c(e)
       }
     })
+
+    #if DEBUG
+      let description = appendDescription("Added catch")
+      return Self(function, description)
+    #else
+      return Self(function)
+    #endif
   }
 
   /// This is similar to catch, but returns a value when an error occurs.

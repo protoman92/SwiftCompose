@@ -22,9 +22,12 @@ public extension FunctionWTest {
       throw FPError(error)
     })
 
+    let composed = sInt.retry(retryCount!)
+    print(composed)
+
     /// When
     do {
-      _ = try sInt.retry(retryCount!).invoke()
+      _ = try composed.invoke()
     } catch let e {
       actualError = e
     }
@@ -47,11 +50,14 @@ public extension FunctionWTest {
       throw FPError(error)
     })
 
+    let composed = sInt.retryWithDelay(retryCount!)(duration)
+    print(composed)
+
     /// When
     let start = Date()
 
     do {
-      _ = try sInt.retryWithDelay(retryCount!)(duration).invoke()
+      _ = try composed.invoke()
     } catch let e {
       actualError = e
     }

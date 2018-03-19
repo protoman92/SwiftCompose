@@ -11,7 +11,7 @@ import XCTest
 @testable import SwiftCompose
 
 public extension FunctionWTest {
-  public func test_functionWMapArg_shouldWork() {
+  public func test_functionMapArg_shouldWork() {
     /// Setup
     let f = FunctionW<String, Int>({Int($0)!})
     let f1 = f.mapArg({(a: Int) in String(describing: a)})

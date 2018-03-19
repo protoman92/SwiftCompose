@@ -19,4 +19,21 @@ public final class SupplyWTest: XCTestCase {
     expectTimeout = 10
     retryCount = 100000
   }
+
+  public func test_convertToFunctionWrapper_shouldWork() {
+    /// Setup
+    let error = "Error"
+
+    let sInt = SupplierW<Int>({_ in throw FPError(error)})
+      .asSupplierWrapper()
+      .asFunctionWrapper()
+
+    /// When & Then
+    do {
+      _ = try sInt.invoke(())
+      XCTFail("Should not have completed")
+    } catch let e {
+      XCTAssertEqual(e.localizedDescription, error)
+    }
+  }
 }

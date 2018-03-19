@@ -18,6 +18,12 @@ public protocol FunctionWrapperConvertibleType {
 public protocol FunctionWrapperType: FunctionWrapperConvertibleType {
   var function: Function<T, R> { get }
 
+  #if DEBUG
+    var description: String { get }
+
+    init(_ function: @escaping Function<T, R>, _ description: String)
+  #endif
+
   init(_ function: @escaping Function<T, R>)
 }
 
@@ -26,3 +32,11 @@ public extension FunctionWrapperType {
     return try function(value)
   }
 }
+
+#if DEBUG
+  extension FunctionWrapperType {
+    func appendDescription(_ description: String) -> String {
+      return "\(self.description) - \(description)"
+    }
+  }
+#endif

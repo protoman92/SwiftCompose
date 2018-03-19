@@ -23,7 +23,15 @@ public extension CallbackWrapperType {
       }
     }
 
-    return Self.pair(pairF)
+    let paired = Self.pair(pairF)
+
+    #if DEBUG
+      let function: Callback<T> = {try paired.invoke($0)}
+      let description = appendDescription(paired.description)
+      return Self(function, description)
+    #else
+      return paired
+    #endif
   }
 }
 

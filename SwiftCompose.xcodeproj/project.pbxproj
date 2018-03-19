@@ -13,13 +13,14 @@
 		D310F4CA205F4D37005EF1BF /* CallbackW.swift in Sources */ = {isa = PBXBuildFile; fileRef = D310F4C9205F4D37005EF1BF /* CallbackW.swift */; };
 		D310F4CC205F4D42005EF1BF /* CallbackWrapperType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D310F4CB205F4D42005EF1BF /* CallbackWrapperType.swift */; };
 		D310F4CE205F4DAE005EF1BF /* SupplierWrapperType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D310F4CD205F4DAE005EF1BF /* SupplierWrapperType.swift */; };
-		D310F4D0205F4EED005EF1BF /* FunctionWTest+Conversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = D310F4CF205F4EED005EF1BF /* FunctionWTest+Conversion.swift */; };
 		D310F4D6205F55A6005EF1BF /* FailableCallbackWrapperType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D310F4D5205F55A6005EF1BF /* FailableCallbackWrapperType.swift */; };
 		D310F4D8205F55DF005EF1BF /* FailableCallbackW.swift in Sources */ = {isa = PBXBuildFile; fileRef = D310F4D7205F55DF005EF1BF /* FailableCallbackW.swift */; };
 		D310F4DA205F55EC005EF1BF /* FailableCallbackW+Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = D310F4D9205F55EC005EF1BF /* FailableCallbackW+Types.swift */; };
 		D310F4DC205F56CD005EF1BF /* FailableCallbackW+Skip.swift in Sources */ = {isa = PBXBuildFile; fileRef = D310F4DB205F56CD005EF1BF /* FailableCallbackW+Skip.swift */; };
 		D310F4DF205F59D6005EF1BF /* FailableCallbackWTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D310F4DE205F59D6005EF1BF /* FailableCallbackWTest.swift */; };
 		D310F4E1205F59FE005EF1BF /* FailableCallbackWTest+Skip.swift in Sources */ = {isa = PBXBuildFile; fileRef = D310F4E0205F59FE005EF1BF /* FailableCallbackWTest+Skip.swift */; };
+		D310F4E3205F7A19005EF1BF /* FunctionW+Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = D310F4E2205F7A19005EF1BF /* FunctionW+Log.swift */; };
+		D310F4E5205F84F4005EF1BF /* FunctionWTest+Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = D310F4E4205F84F4005EF1BF /* FunctionWTest+Log.swift */; };
 		D312BF62205E2BB700F366A5 /* FunctionWTest+Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = D312BF61205E2BB700F366A5 /* FunctionWTest+Map.swift */; };
 		D312BF64205E496700F366A5 /* SupplierW.swift in Sources */ = {isa = PBXBuildFile; fileRef = D312BF63205E496700F366A5 /* SupplierW.swift */; };
 		D312BF66205E4E8800F366A5 /* FunctionW.swift in Sources */ = {isa = PBXBuildFile; fileRef = D312BF65205E4E8800F366A5 /* FunctionW.swift */; };
@@ -77,13 +78,14 @@
 		D310F4C9205F4D37005EF1BF /* CallbackW.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallbackW.swift; sourceTree = "<group>"; };
 		D310F4CB205F4D42005EF1BF /* CallbackWrapperType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallbackWrapperType.swift; sourceTree = "<group>"; };
 		D310F4CD205F4DAE005EF1BF /* SupplierWrapperType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupplierWrapperType.swift; sourceTree = "<group>"; };
-		D310F4CF205F4EED005EF1BF /* FunctionWTest+Conversion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FunctionWTest+Conversion.swift"; sourceTree = "<group>"; };
 		D310F4D5205F55A6005EF1BF /* FailableCallbackWrapperType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FailableCallbackWrapperType.swift; sourceTree = "<group>"; };
 		D310F4D7205F55DF005EF1BF /* FailableCallbackW.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FailableCallbackW.swift; sourceTree = "<group>"; };
 		D310F4D9205F55EC005EF1BF /* FailableCallbackW+Types.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FailableCallbackW+Types.swift"; sourceTree = "<group>"; };
 		D310F4DB205F56CD005EF1BF /* FailableCallbackW+Skip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FailableCallbackW+Skip.swift"; sourceTree = "<group>"; };
 		D310F4DE205F59D6005EF1BF /* FailableCallbackWTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FailableCallbackWTest.swift; sourceTree = "<group>"; };
 		D310F4E0205F59FE005EF1BF /* FailableCallbackWTest+Skip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FailableCallbackWTest+Skip.swift"; sourceTree = "<group>"; };
+		D310F4E2205F7A19005EF1BF /* FunctionW+Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FunctionW+Log.swift"; sourceTree = "<group>"; };
+		D310F4E4205F84F4005EF1BF /* FunctionWTest+Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FunctionWTest+Log.swift"; sourceTree = "<group>"; };
 		D312BF61205E2BB700F366A5 /* FunctionWTest+Map.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FunctionWTest+Map.swift"; sourceTree = "<group>"; };
 		D312BF63205E496700F366A5 /* SupplierW.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupplierW.swift; sourceTree = "<group>"; };
 		D312BF65205E4E8800F366A5 /* FunctionW.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunctionW.swift; sourceTree = "<group>"; };
@@ -292,6 +294,7 @@
 				D318D718205EB7C400CBD754 /* FunctionW+Timeout.swift */,
 				D3FBD4DD205D547300CF0CEB /* FunctionW+Types.swift */,
 				D310F4C7205F4130005EF1BF /* FunctionWrapperType.swift */,
+				D310F4E2205F7A19005EF1BF /* FunctionW+Log.swift */,
 			);
 			path = FunctionWrapper;
 			sourceTree = "<group>";
@@ -308,7 +311,7 @@
 				D318D710205EA14200CBD754 /* FunctionWTest+Publish.swift */,
 				D318D716205EB66200CBD754 /* FunctionWTest+Retry.swift */,
 				D318D71A205EB92600CBD754 /* FunctionWTest+Timeout.swift */,
-				D310F4CF205F4EED005EF1BF /* FunctionWTest+Conversion.swift */,
+				D310F4E4205F84F4005EF1BF /* FunctionWTest+Log.swift */,
 			);
 			path = FunctionWrapper;
 			sourceTree = "<group>";
@@ -540,6 +543,7 @@
 				D318D719205EB7C400CBD754 /* FunctionW+Timeout.swift in Sources */,
 				D315FE88205B687A0050CED0 /* SupplierW+Types.swift in Sources */,
 				D310F4CC205F4D42005EF1BF /* CallbackWrapperType.swift in Sources */,
+				D310F4E3205F7A19005EF1BF /* FunctionW+Log.swift in Sources */,
 				D312BF64205E496700F366A5 /* SupplierW.swift in Sources */,
 				D312BF66205E4E8800F366A5 /* FunctionW.swift in Sources */,
 				D310F4D8205F55DF005EF1BF /* FailableCallbackW.swift in Sources */,
@@ -562,11 +566,11 @@
 				D3FBD4E5205D5D5B00CF0CEB /* FunctionWTest+Pair.swift in Sources */,
 				D318D71B205EB92600CBD754 /* FunctionWTest+Timeout.swift in Sources */,
 				D318D701205E716B00CBD754 /* CallbackWTest.swift in Sources */,
+				D310F4E5205F84F4005EF1BF /* FunctionWTest+Log.swift in Sources */,
 				D318D717205EB66200CBD754 /* FunctionWTest+Retry.swift in Sources */,
 				D3EAEDC9205AE24A0033CF62 /* SupplyWTest.swift in Sources */,
 				D3EAEDD9205AE5570033CF62 /* FunctionWTest+Async.swift in Sources */,
 				D318D711205EA14200CBD754 /* FunctionWTest+Publish.swift in Sources */,
-				D310F4D0205F4EED005EF1BF /* FunctionWTest+Conversion.swift in Sources */,
 				D312BF62205E2BB700F366A5 /* FunctionWTest+Map.swift in Sources */,
 				D310F4DF205F59D6005EF1BF /* FailableCallbackWTest.swift in Sources */,
 				D3FBD4E3205D5D3B00CF0CEB /* FunctionWTest.swift in Sources */,

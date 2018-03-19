@@ -18,7 +18,7 @@ public extension FunctionWTest {
     var publishCount = 0
     let error = "Error"
     let dispatchQueue = DispatchQueue.global(qos: .background)
-    let fInt: SupplierW<Int> = SupplierW({throw FPError(error)})
+    let sInt: SupplierW<Int> = SupplierW({throw FPError(error)})
     let publishF: (Error) -> Void = {_ in publishCount += 1}
 
     let reset: () -> Void = {
@@ -29,7 +29,7 @@ public extension FunctionWTest {
 
     /// When & Then 1
     do {
-      actualResult = try fInt.retry(retryCount!)
+      actualResult = try sInt.retry(retryCount!)
         .publishError(publishF)
         .timeout(10)(dispatchQueue)
         .invoke()
@@ -45,7 +45,7 @@ public extension FunctionWTest {
     reset()
 
     do {
-      actualResult = try fInt.publishError(publishF)
+      actualResult = try sInt.publishError(publishF)
         .retry(retryCount!)
         .timeout(10)(dispatchQueue)
         .invoke()
@@ -61,7 +61,7 @@ public extension FunctionWTest {
     reset()
 
     do {
-      actualResult = try fInt.catchReturn(1)
+      actualResult = try sInt.catchReturn(1)
         .publishError(publishF)
         .retry(retryCount!)
         .retry(retryCount!)

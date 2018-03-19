@@ -16,10 +16,17 @@ public extension FunctionWrapperType {
   public static func pair(_ pairF: @escaping PairFunction<T, R>) -> Self {
     var lastValue: StrongReference<T>?
 
-    return Self({
+    let function: Function<T, R> = ({
       let oldLastValue = lastValue
       lastValue = StrongReference($0)
       return try pairF(oldLastValue?.value, $0)
     })
+
+    #if DEBUG
+      let description = "Added pairing with previous value"
+      return Self(function, description)
+    #else
+      return Self(function)
+    #endif
   }
 }
