@@ -6,14 +6,14 @@
 //  Copyright © 2018 Hai Pham. All rights reserved.
 //
 
-public extension FunctionW {
+public extension FunctionWrapperType {
 
   /// Publish the result of a Function.
   ///
   /// - Parameter p: A callback function.
-  /// - Returns: A FunctionW instance.
-  public func publish(_ p: @escaping (R) throws -> Void) -> FunctionW<T, R> {
-    return FunctionW({
+  /// - Returns: A Self instance.
+  public func publish(_ p: @escaping (R) throws -> Void) -> Self {
+    return Self({
       let value = try self.invoke($0)
       try p(value)
       return value
@@ -24,9 +24,9 @@ public extension FunctionW {
   /// is encountered.
   ///
   /// - Parameter p: An error callback function.
-  /// - Returns: A FunctionW instance.
-  public func publishError(_ p: @escaping (Error) throws -> Void) -> FunctionW<T, R> {
-    return FunctionW({
+  /// - Returns: A Self instance.
+  public func publishError(_ p: @escaping (Error) throws -> Void) -> Self {
+    return Self({
       do {
         return try self.invoke($0)
       } catch let e {

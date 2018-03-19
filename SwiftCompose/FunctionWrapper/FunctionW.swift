@@ -13,8 +13,12 @@ public struct FunctionW<T, R> {
   public init(_ f: @escaping Function<T, R>) {
     self.function = f
   }
+}
 
-  public func invoke(_ value: T) throws -> R {
-    return try function(value)
+extension FunctionW: FunctionWrapperConvertibleType {
+  public func asFunctionWrapper() -> FunctionW<T, R> {
+    return self
   }
 }
+
+extension FunctionW: FunctionWrapperType {}

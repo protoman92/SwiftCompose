@@ -19,6 +19,3 @@ public typealias Supplier<T> = () throws -> T
 
 /// SupplierF represents a function that maps a SupplierW to another Supplier.
 public typealias SupplierF<T> = (@escaping Supplier<T>) throws -> Supplier<T>
-
-/// Wrapper for a supplier function.
-public typealias SupplierW<R> = FunctionW<Void, R>

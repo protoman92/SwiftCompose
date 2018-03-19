@@ -6,7 +6,7 @@
 //  Copyright © 2018 Hai Pham. All rights reserved.
 //
 
-public extension FunctionW {
+public extension FunctionWrapperType {
 
   /// Retry wraps an error-returning function with retry capabilities. It
   /// also keeps track of the current retry count, which may be useful if we
@@ -14,11 +14,11 @@ public extension FunctionW {
   ///
   /// - Parameter times: The number of times to retry.
   /// - Returns: A custom higher order function.
-  public static func retryWithCount(_ times: Int) -> (@escaping (Int, T) throws -> R) -> FunctionW<T, R> {
+  public static func retryWithCount(_ times: Int) -> (@escaping (Int, T) throws -> R) -> Self {
     assert(times >= 0, "Expected retry to be more than 0, but got \(times)")
 
-    return {(s: @escaping (Int, T) throws -> R) -> FunctionW<T, R> in
-      return FunctionW({
+    return {(s: @escaping (Int, T) throws -> R) -> Self in
+      return Self({
         var current = 0
 
         while true {
@@ -57,9 +57,9 @@ public extension FunctionW {
   /// Retry the current function up to the specified retry count.
   ///
   /// - Parameter times: The number of times to retry.
-  /// - Returns: A FunctionW instance.
-  public func retry(_ times: Int) -> FunctionW<T, R> {
-    return FunctionW.retryWithCount(times)({try self.invoke($1)})
+  /// - Returns: A Self instance.
+  public func retry(_ times: Int) -> Self {
+    return Self.retryWithCount(times)({try self.invoke($1)})
   }
 
   /// Curry to provide retry and delay capabilities. Provide seconds for the
@@ -67,9 +67,9 @@ public extension FunctionW {
   ///
   /// - Parameter times: The number of times to retry.
   /// - Returns: A custom higher order function.
-  public func retryWithDelay(_ times: Int) -> (TimeInterval) -> FunctionW<T, R> {
+  public func retryWithDelay(_ times: Int) -> (TimeInterval) -> Self {
     return {(d: TimeInterval) in
-      return FunctionW{try FunctionW.retryWithDelay(times)(d)(self.function)($0)}
+      return Self{try FunctionW.retryWithDelay(times)(d)(self.function)($0)}
     }
   }
 }

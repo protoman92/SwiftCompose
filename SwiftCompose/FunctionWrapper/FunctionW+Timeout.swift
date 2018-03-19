@@ -8,7 +8,7 @@
 
 import SwiftFP
 
-public extension FunctionW {
+public extension FunctionWrapperType {
 
   /// Times out an operation with a timeout error. For the second curried
   /// parameter, provide the DispatchQueue to run the operation on. The
@@ -50,8 +50,8 @@ public extension FunctionW {
   ///
   /// - Parameter duration: A TimeInterval value.
   /// - Returns: A custom higher order function.
-  public func timeout(_ duration: TimeInterval) -> (DispatchQueue) -> FunctionW<T, R> {
-    return {(dq: DispatchQueue) in FunctionW({
+  public func timeout(_ duration: TimeInterval) -> (DispatchQueue) -> Self {
+    return {(dq: DispatchQueue) in Self({
         try FunctionW.timeout(duration)(dq)(self.function)($0)
     })}
   }

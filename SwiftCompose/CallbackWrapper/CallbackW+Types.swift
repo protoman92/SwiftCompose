@@ -8,6 +8,3 @@
 
 /// Specialized form of Function.
 public typealias Callback<T> = Function<T, Void>
-
-/// Wrapper for a callback function.
-public typealias CallbackW<T> = FunctionW<T, Void>

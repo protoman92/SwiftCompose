@@ -6,14 +6,14 @@
 //  Copyright © 2018 Hai Pham. All rights reserved.
 //
 
-public extension FunctionW {
+public extension FunctionWrapperType {
 
   /// Catch the error and return a different value.
   ///
   /// - Parameter c: A Error transform function.
-  /// - Returns: A FunctionW instance.
-  public func `catch`(_ c: @escaping (Error) throws -> R) -> FunctionW<T, R> {
-    return FunctionW({
+  /// - Returns: A Self instance.
+  public func `catch`(_ c: @escaping (Error) throws -> R) -> Self {
+    return Self({
       do {
         return try self.invoke($0)
       } catch let e {
@@ -25,8 +25,8 @@ public extension FunctionW {
   /// This is similar to catch, but returns a value when an error occurs.
   ///
   /// - Parameter v: A R instance.
-  /// - Returns: A FunctionW instance.
-  public func catchReturn(_ v: R) -> FunctionW<T, R> {
+  /// - Returns: A Self instance.
+  public func catchReturn(_ v: R) -> Self {
     return `catch`({_ in v})
   }
 }
