@@ -8,7 +8,7 @@
 
 import SwiftFP
 
-public extension FunctionWrapperType {
+public extension FunctionFWrapperType {
 
   /// Times out an operation with a timeout error. For the second curried
   /// parameter, provide the DispatchQueue to run the operation on. The
@@ -21,9 +21,9 @@ public extension FunctionWrapperType {
   ///
   /// - Parameter duration: A TimeInterval value.
   /// - Returns: A custom higher order function.
-  public static func timeout(_ duration: TimeInterval) -> (DispatchQueue) -> FunctionF<T, R> {
-    return {(dq: DispatchQueue) -> FunctionF<T, R> in
-      return {(s: @escaping Function<T, R>) -> Function<T, R> in
+  public static func timeout(_ duration: TimeInterval) -> (DispatchQueue) -> Self {
+    return {(dq: DispatchQueue) in
+      return Self({(s: @escaping Function<T, R>) in
         return {(v: T) in
           let dispatchGroup = DispatchGroup()
           var result: StrongReference<Try<R>>?
@@ -42,9 +42,12 @@ public extension FunctionWrapperType {
             throw FPError("Timed out after \(duration)")
           }
         }
-      }
+      })
     }
   }
+}
+
+public extension FunctionWrapperType {
 
   /// Convenience method to provide timeout functionalities.
   ///
@@ -52,15 +55,13 @@ public extension FunctionWrapperType {
   /// - Returns: A custom higher order function.
   public func timeout(_ duration: TimeInterval) -> (DispatchQueue) -> Self {
     return {(dq: DispatchQueue) in
-      let function: Function<T, R> = {
-        try FunctionW.timeout(duration)(dq)(self.function)($0)
-      }
+      let f = FunctionFW<T, R>.timeout(duration)(dq).wrap(self.f).f
 
       #if DEBUG
-        let description = self.appendDescription("Added timeout for \(duration)")
-        return Self(function, description)
+      let description = self.appendDescription("Added timeout for \(duration)")
+      return Self(f, description)
       #else
-        return Self(function)
+      return Self(f)
       #endif
     }
   }

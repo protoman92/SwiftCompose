@@ -39,10 +39,10 @@ public extension SupplierWrapperType {
     })
 
     #if DEBUG
-      let description = "Added sync for callback"
-      return Self(function, description)
+    let description = "Added sync for callback"
+    return Self(function, description)
     #else
-      return Self(function)
+    return Self(function)
     #endif
   }
 }

@@ -19,10 +19,10 @@ public extension CallbackWrapperType {
     })
 
     #if DEBUG
-      let description = appendDescription("Added filter")
-      return Self(callback, description)
+    let description = appendDescription("Added filter")
+    return Self(callback, description)
     #else
-      return Self(callback)
+    return Self(callback)
     #endif
   }
 }

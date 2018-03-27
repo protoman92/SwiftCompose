@@ -25,7 +25,7 @@ public extension FunctionWTest {
 
     let callingDq = DispatchQueue.global(qos: .background)
     let performDq = DispatchQueue.global(qos: .background)
-    let composed = sInt.retry(retryCount!).timeout(timeout)(performDq)
+    let composed = sInt.retry(retries!).timeout(timeout)(performDq)
     let expect = expectation(description: "Should have completed")
 
     /// When

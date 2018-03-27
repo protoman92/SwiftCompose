@@ -22,7 +22,7 @@ public extension FunctionWTest {
       throw FPError(error)
     })
 
-    let composed = sInt.retry(retryCount!)
+    let composed = sInt.retry(retries!)
     print(composed)
 
     /// When
@@ -33,16 +33,15 @@ public extension FunctionWTest {
     }
 
     /// Then
-    XCTAssertEqual(actualTryCount, retryCount! + 1)
+    XCTAssertEqual(actualTryCount, retries! + 1)
     XCTAssertEqual(actualError?.localizedDescription, error)
   }
 
   public func test_functionRetryWithDelay_shouldWork() {
     /// Setup
-    retryCount = 15
+    retries = 15
     var actualError: Error?
     var actualTryCount = 0
-    let duration: TimeInterval = 0.2
     let error = "Error!"
 
     let sInt: SupplierW<Int> = SupplierW({
@@ -50,7 +49,7 @@ public extension FunctionWTest {
       throw FPError(error)
     })
 
-    let composed = sInt.retryWithDelay(retryCount!)(duration)
+    let composed = sInt.retryWithDelay(retries!)(retryDelay!)
     print(composed)
 
     /// When
@@ -65,8 +64,8 @@ public extension FunctionWTest {
     let difference = Date().timeIntervalSince(start)
 
     /// Then
-    XCTAssertEqual(actualTryCount, retryCount! + 1)
-    XCTAssertLessThan((difference / Double(retryCount!) - duration) / duration, 0.1)
+    XCTAssertEqual(actualTryCount, retries! + 1)
+    XCTAssertLessThan((difference / Double(retries!) - retryDelay!) / retryDelay!, 0.1)
     XCTAssertEqual(actualError?.localizedDescription, error)
   }
 }

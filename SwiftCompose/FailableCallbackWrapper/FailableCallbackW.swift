@@ -9,22 +9,22 @@
 import SwiftFP
 
 public struct FailableCallbackW<TC: TryConvertibleType> {
-  public var function: FailableCallback<TC>
+  public var f: FailableCallback<TC>
 
   #if DEBUG
-    public let description: String
+  public let description: String
 
-    public init(_ callback: @escaping FailableCallback<TC>, _ description: String) {
-      self.description = description
-      self.function = callback
-    }
+  public init(_ callback: @escaping FailableCallback<TC>, _ description: String) {
+    self.f = callback
+    self.description = description
+  }
   #endif
 
   public init(_ callback: @escaping FailableCallback<TC>) {
-    self.function = callback
+    self.f = callback
 
     #if DEBUG
-      description = String(describing: FailableCallbackW.self)
+    description = String(describing: FailableCallbackW.self)
     #endif
   }
 }
@@ -35,9 +35,9 @@ extension FailableCallbackW: FunctionWrapperConvertibleType {
 
   public func asFunctionWrapper() -> FunctionW<TC, Void> {
     #if DEBUG
-      return FunctionW(function, description)
+    return FunctionW(f, description)
     #else
-      return FunctionW(function)
+    return FunctionW(f)
     #endif
   }
 }
@@ -45,9 +45,9 @@ extension FailableCallbackW: FunctionWrapperConvertibleType {
 extension FailableCallbackW: CallbackWrapperConvertibleType {
   public func asCallbackWrapper() -> CallbackW<TC> {
     #if DEBUG
-      return CallbackW(function, description)
+    return CallbackW(f, description)
     #else
-      return CallbackW(function)
+    return CallbackW(f)
     #endif
   }
 }
@@ -59,7 +59,7 @@ extension FailableCallbackW: FailableCallbackWrapperType {
 }
 
 #if DEBUG
-  extension FailableCallbackW: CustomStringConvertible {}
+extension FailableCallbackW: CustomStringConvertible {}
 #endif
 
 public extension CallbackW where T: TryConvertibleType {
@@ -69,9 +69,9 @@ public extension CallbackW where T: TryConvertibleType {
   /// - Returns: A FailableCallbackW instance.
   public func asFailableCallbackWrapper() -> FailableCallbackW<T> {
     #if DEBUG
-      return FailableCallbackW(function, description)
+    return FailableCallbackW(f, description)
     #else
-      return FailableCallbackW(function)
+    return FailableCallbackW(f)
     #endif
   }
 }

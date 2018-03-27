@@ -29,7 +29,7 @@ public extension FunctionWTest {
 
     /// When & Then 1
     do {
-      actualResult = try sInt.retry(retryCount!)
+      actualResult = try sInt.retry(retries!)
         .publishError(publishF)
         .timeout(10)(dispatchQueue)
         .invoke()
@@ -46,7 +46,7 @@ public extension FunctionWTest {
 
     do {
       actualResult = try sInt.publishError(publishF)
-        .retry(retryCount!)
+        .retry(retries!)
         .timeout(10)(dispatchQueue)
         .invoke()
     } catch let e {
@@ -55,7 +55,7 @@ public extension FunctionWTest {
 
     XCTAssertEqual(actualError?.localizedDescription, error)
     XCTAssertNil(actualResult)
-    XCTAssertEqual(publishCount, retryCount! + 1)
+    XCTAssertEqual(publishCount, retries! + 1)
 
     /// When & Then 3
     reset()
@@ -63,9 +63,9 @@ public extension FunctionWTest {
     do {
       actualResult = try sInt.catchReturn(1)
         .publishError(publishF)
-        .retry(retryCount!)
-        .retry(retryCount!)
-        .retry(retryCount!)
+        .retry(retries!)
+        .retry(retries!)
+        .retry(retries!)
         .timeout(2)(dispatchQueue)
         .invoke(())
     } catch let e {

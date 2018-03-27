@@ -12,13 +12,15 @@ import XCTest
 
 public final class FunctionWTest: XCTestCase {
   public var expectTimeout: TimeInterval!
-  public var retryCount: Int!
+  public var retries: Int!
+  public var retryDelay: TimeInterval!
   public var testCount: Int!
 
   override public func setUp() {
     super.setUp()
     expectTimeout = 10
-    retryCount = 100000
+    retries = 100000
+    retryDelay = 0.1
     testCount = 1000
   }
 

@@ -14,4 +14,4 @@ public typealias Function<T, R> = (T) throws -> R
 public typealias PairFunction<T, R> = (T?, T) throws -> R
 
 /// FunctionF maps a Function to a Function.
-public typealias FunctionF<T, R> = (@escaping Function<T, R>) throws -> Function<T, R>
+public typealias FunctionF<T, R> = (@escaping Function<T, R>) -> Function<T, R>

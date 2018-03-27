@@ -6,19 +6,28 @@
 //  Copyright © 2018 Hai Pham. All rights reserved.
 //
 
-public extension FunctionWrapperType {
+#if DEBUG
+private func retryDesc(_ times: Int) -> String {
+  return "Added retry for \(times)"
+}
 
-  /// Retry wraps an error-returning function with retry capabilities. It
-  /// also keeps track of the current retry count, which may be useful if we
-  /// want to define a custom retry delay function.
+private func retryWithDelayDesc(_ t: Int, _ d: TimeInterval) -> String {
+  return "Added retry for \(t) with \(d) delay between retries"
+}
+#endif
+
+public extension FunctionFWrapperType {
+  /// Retry wraps an error-returning function with retry capabilities. It also
+  /// keeps track of the current retry count, which may be useful if we want to
+  /// define a custom retry delay function.
   ///
   /// - Parameter times: The number of times to retry.
   /// - Returns: A custom higher order function.
-  public static func retryWithCount(_ times: Int) -> (@escaping (Int, T) throws -> R) -> Self {
+  public static func retryWithCount(_ times: Int) -> (@escaping (Int, T) throws -> R) -> Function<T, R> {
     assert(times >= 0, "Expected retry to be more than 0, but got \(times)")
 
-    return {(s: @escaping (Int, T) throws -> R) -> Self in
-      let function: Function<T, R> = ({
+    return {(s: @escaping (Int, T) throws -> R) -> Function<T, R> in
+      return {
         var current = 0
 
         while true {
@@ -32,15 +41,25 @@ public extension FunctionWrapperType {
 
           current += 1
         }
-      })
-
-      #if DEBUG
-        let description = "Added retry for \(times) times"
-        return Self(function, description)
-      #else
-        return Self(function)
-      #endif
+      }
     }
+  }
+
+  /// Retry a function with the specified number of retries.
+  ///
+  /// - Parameter times: An Int value.
+  /// - Returns: A Self instance.
+  public static func retry(_ times: Int) -> Self {
+    let ff: FunctionF<T, R> = {(f: @escaping Function<T, R>) in
+      Self.retryWithCount(times)({try f($1)})
+    }
+
+    #if DEBUG
+    let description = retryDesc(times)
+    return Self(ff, description)
+    #else
+    return Self(ff)
+    #endif
   }
 
   /// Curry to provide retry and delay capabilities. Provide seconds for the
@@ -48,32 +67,40 @@ public extension FunctionWrapperType {
   ///
   /// - Parameter times: The number of times to retry.
   /// - Returns: A custom higher order function.
-  public static func retryWithDelay(_ times: Int) -> (TimeInterval) -> FunctionF<T, R> {
-    return {(d: TimeInterval) -> FunctionF<T, R> in
-      return {(f: @escaping Function<T, R>) -> Function<T, R> in
+  public static func retryWithDelay(_ times: Int) -> (TimeInterval) -> Self {
+    return {(d: TimeInterval) -> Self in
+      let ff = {(f: @escaping Function<T, R>) -> Function<T, R> in
         return {
-          return try retryWithCount(times)({
+          return try Self.retryWithCount(times)({
             if $0 > 0 { Thread.sleep(forTimeInterval: d) }
             return try f($1)
-          }).invoke($0)
+          })($0)
         }
       }
+
+      #if DEBUG
+      return Self(ff, retryWithDelayDesc(times, d))
+      #else
+      return Self(ff)
+      #endif
     }
   }
+}
+
+public extension FunctionWrapperType {
 
   /// Retry the current function up to the specified retry count.
   ///
   /// - Parameter times: The number of times to retry.
   /// - Returns: A Self instance.
   public func retry(_ times: Int) -> Self {
-    let retried = Self.retryWithCount(times)({try self.invoke($1)})
+    let f = FunctionFW<T, R>.retry(times).wrap(self.f).f
 
     #if DEBUG
-      let function: Function<T, R> = {try retried.invoke($0)}
-      let description = appendDescription(retried.description)
-      return Self(function, description)
+    let description = appendDescription(retryDesc(times))
+    return Self(f, description)
     #else
-      return retried
+    return Self(f)
     #endif
   }
 
@@ -84,18 +111,13 @@ public extension FunctionWrapperType {
   /// - Returns: A custom higher order function.
   public func retryWithDelay(_ times: Int) -> (TimeInterval) -> Self {
     return {(d: TimeInterval) in
-      let function: Function<T, R> = {
-        try FunctionW.retryWithDelay(times)(d)(self.function)($0)
-      }
+      let f = FunctionFW<T, R>.retryWithDelay(times)(d).wrap(self.f).f
 
       #if DEBUG
-        let description = self.appendDescription("" +
-          "Added retry for \(times) " +
-          "with \(d) delay between retries")
-
-        return Self(function, description)
+      let description = self.appendDescription(retryWithDelayDesc(times, d))
+      return Self(f, description)
       #else
-        return Self(function)
+      return Self(f)
       #endif
     }
   }

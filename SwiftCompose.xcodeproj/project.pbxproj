@@ -40,6 +40,9 @@
 		D318D71F205ED31500CBD754 /* CallbackW+Distinct.swift in Sources */ = {isa = PBXBuildFile; fileRef = D318D71E205ED31500CBD754 /* CallbackW+Distinct.swift */; };
 		D318D721205ED8C400CBD754 /* CallbackW+Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D318D720205ED8C400CBD754 /* CallbackW+Filter.swift */; };
 		D318D723205ED97100CBD754 /* CallbackW+Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D318D722205ED97100CBD754 /* CallbackW+Filter.swift */; };
+		D3A2B1CE2069C296002F720D /* FunctionFW.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A2B1CD2069C296002F720D /* FunctionFW.swift */; };
+		D3A2B1D02069C425002F720D /* FunctionFWrapperType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A2B1CF2069C425002F720D /* FunctionFWrapperType.swift */; };
+		D3A2B1D22069CFFF002F720D /* FunctionFWTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A2B1D12069CFFF002F720D /* FunctionFWTest.swift */; };
 		D3EAEDA7205AE0B20033CF62 /* SwiftCompose.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3EAED9D205AE0B20033CF62 /* SwiftCompose.framework */; };
 		D3EAEDAE205AE0B20033CF62 /* SwiftCompose.h in Headers */ = {isa = PBXBuildFile; fileRef = D3EAEDA0205AE0B20033CF62 /* SwiftCompose.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D3EAEDC2205AE23D0033CF62 /* SupplierW+Sync.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EAEDBA205AE23C0033CF62 /* SupplierW+Sync.swift */; };
@@ -105,6 +108,9 @@
 		D318D71E205ED31500CBD754 /* CallbackW+Distinct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CallbackW+Distinct.swift"; sourceTree = "<group>"; };
 		D318D720205ED8C400CBD754 /* CallbackW+Filter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CallbackW+Filter.swift"; sourceTree = "<group>"; };
 		D318D722205ED97100CBD754 /* CallbackW+Filter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CallbackW+Filter.swift"; sourceTree = "<group>"; };
+		D3A2B1CD2069C296002F720D /* FunctionFW.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunctionFW.swift; sourceTree = "<group>"; };
+		D3A2B1CF2069C425002F720D /* FunctionFWrapperType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunctionFWrapperType.swift; sourceTree = "<group>"; };
+		D3A2B1D12069CFFF002F720D /* FunctionFWTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunctionFWTest.swift; sourceTree = "<group>"; };
 		D3EAED9D205AE0B20033CF62 /* SwiftCompose.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftCompose.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3EAEDA0205AE0B20033CF62 /* SwiftCompose.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftCompose.h; sourceTree = "<group>"; };
 		D3EAEDA1205AE0B20033CF62 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -172,10 +178,10 @@
 		D310F4D4205F5596005EF1BF /* FailableCallbackWrapper */ = {
 			isa = PBXGroup;
 			children = (
-				D310F4D5205F55A6005EF1BF /* FailableCallbackWrapperType.swift */,
 				D310F4D7205F55DF005EF1BF /* FailableCallbackW.swift */,
-				D310F4D9205F55EC005EF1BF /* FailableCallbackW+Types.swift */,
 				D310F4DB205F56CD005EF1BF /* FailableCallbackW+Skip.swift */,
+				D310F4D9205F55EC005EF1BF /* FailableCallbackW+Types.swift */,
+				D310F4D5205F55A6005EF1BF /* FailableCallbackWrapperType.swift */,
 			);
 			path = FailableCallbackWrapper;
 			sourceTree = "<group>";
@@ -192,10 +198,10 @@
 		D318D6FC205E69B200CBD754 /* CallbackWrapper */ = {
 			isa = PBXGroup;
 			children = (
-				D318D70C205E9F5600CBD754 /* CallbackW+Types.swift */,
+				D310F4C9205F4D37005EF1BF /* CallbackW.swift */,
 				D318D71E205ED31500CBD754 /* CallbackW+Distinct.swift */,
 				D318D720205ED8C400CBD754 /* CallbackW+Filter.swift */,
-				D310F4C9205F4D37005EF1BF /* CallbackW.swift */,
+				D318D70C205E9F5600CBD754 /* CallbackW+Types.swift */,
 				D310F4CB205F4D42005EF1BF /* CallbackWrapperType.swift */,
 			);
 			path = CallbackWrapper;
@@ -236,12 +242,12 @@
 		D3EAED9F205AE0B20033CF62 /* SwiftCompose */ = {
 			isa = PBXGroup;
 			children = (
-				D310F4D4205F5596005EF1BF /* FailableCallbackWrapper */,
-				D318D6FC205E69B200CBD754 /* CallbackWrapper */,
-				D3FBD4DA205D544000CF0CEB /* FunctionWrapper */,
-				D3EAEDA1205AE0B20033CF62 /* Info.plist */,
-				D3FBD4D8205D538300CF0CEB /* SupplierWrapper */,
 				D3EAEDA0205AE0B20033CF62 /* SwiftCompose.h */,
+				D3EAEDA1205AE0B20033CF62 /* Info.plist */,
+				D318D6FC205E69B200CBD754 /* CallbackWrapper */,
+				D310F4D4205F5596005EF1BF /* FailableCallbackWrapper */,
+				D3FBD4DA205D544000CF0CEB /* FunctionWrapper */,
+				D3FBD4D8205D538300CF0CEB /* SupplierWrapper */,
 				D3FBD4E6205D5D5F00CF0CEB /* Utilities */,
 			);
 			path = SwiftCompose;
@@ -250,12 +256,12 @@
 		D3EAEDAA205AE0B20033CF62 /* SwiftComposeTests */ = {
 			isa = PBXGroup;
 			children = (
-				D310F4DD205F59C4005EF1BF /* FailableCallbackWrapper */,
-				D318D6FF205E715700CBD754 /* CallbackWrapper */,
-				D3FBD4E1205D5D2E00CF0CEB /* FunctionWrapper */,
-				D3EAEDAD205AE0B20033CF62 /* Info.plist */,
-				D3FBD4D9205D53F900CF0CEB /* SupplierWrapper */,
 				D3EAEDC7205AE24A0033CF62 /* SwiftComposeTests-Bridging-Header.h */,
+				D3EAEDAD205AE0B20033CF62 /* Info.plist */,
+				D318D6FF205E715700CBD754 /* CallbackWrapper */,
+				D310F4DD205F59C4005EF1BF /* FailableCallbackWrapper */,
+				D3FBD4E1205D5D2E00CF0CEB /* FunctionWrapper */,
+				D3FBD4D9205D53F900CF0CEB /* SupplierWrapper */,
 			);
 			path = SwiftComposeTests;
 			sourceTree = "<group>";
@@ -285,8 +291,11 @@
 		D3FBD4DA205D544000CF0CEB /* FunctionWrapper */ = {
 			isa = PBXGroup;
 			children = (
+				D3A2B1CD2069C296002F720D /* FunctionFW.swift */,
+				D3A2B1CF2069C425002F720D /* FunctionFWrapperType.swift */,
 				D312BF65205E4E8800F366A5 /* FunctionW.swift */,
 				D318D708205E9E4500CBD754 /* FunctionW+Catch.swift */,
+				D310F4E2205F7A19005EF1BF /* FunctionW+Log.swift */,
 				D318D706205E9E0900CBD754 /* FunctionW+Map.swift */,
 				D3FBD4DF205D576100CF0CEB /* FunctionW+Pair.swift */,
 				D318D70E205EA0B300CBD754 /* FunctionW+Publish.swift */,
@@ -294,7 +303,6 @@
 				D318D718205EB7C400CBD754 /* FunctionW+Timeout.swift */,
 				D3FBD4DD205D547300CF0CEB /* FunctionW+Types.swift */,
 				D310F4C7205F4130005EF1BF /* FunctionWrapperType.swift */,
-				D310F4E2205F7A19005EF1BF /* FunctionW+Log.swift */,
 			);
 			path = FunctionWrapper;
 			sourceTree = "<group>";
@@ -302,16 +310,17 @@
 		D3FBD4E1205D5D2E00CF0CEB /* FunctionWrapper */ = {
 			isa = PBXGroup;
 			children = (
+				D3A2B1D12069CFFF002F720D /* FunctionFWTest.swift */,
 				D3FBD4E2205D5D3B00CF0CEB /* FunctionWTest.swift */,
 				D3EAEDD8205AE5570033CF62 /* FunctionWTest+Async.swift */,
 				D318D70A205E9F1F00CBD754 /* FunctionWTest+Catch.swift */,
+				D310F4E4205F84F4005EF1BF /* FunctionWTest+Log.swift */,
 				D312BF61205E2BB700F366A5 /* FunctionWTest+Map.swift */,
 				D3EAEDD6205AE5350033CF62 /* FunctionWTest+Multiple.swift */,
 				D3FBD4E4205D5D5B00CF0CEB /* FunctionWTest+Pair.swift */,
 				D318D710205EA14200CBD754 /* FunctionWTest+Publish.swift */,
 				D318D716205EB66200CBD754 /* FunctionWTest+Retry.swift */,
 				D318D71A205EB92600CBD754 /* FunctionWTest+Timeout.swift */,
-				D310F4E4205F84F4005EF1BF /* FunctionWTest+Log.swift */,
 			);
 			path = FunctionWrapper;
 			sourceTree = "<group>";
@@ -539,6 +548,7 @@
 				D318D71F205ED31500CBD754 /* CallbackW+Distinct.swift in Sources */,
 				D318D715205EA47B00CBD754 /* FunctionW+Retry.swift in Sources */,
 				D318D721205ED8C400CBD754 /* CallbackW+Filter.swift in Sources */,
+				D3A2B1D02069C425002F720D /* FunctionFWrapperType.swift in Sources */,
 				D310F4DA205F55EC005EF1BF /* FailableCallbackW+Types.swift in Sources */,
 				D318D719205EB7C400CBD754 /* FunctionW+Timeout.swift in Sources */,
 				D315FE88205B687A0050CED0 /* SupplierW+Types.swift in Sources */,
@@ -554,6 +564,7 @@
 				D318D709205E9E4500CBD754 /* FunctionW+Catch.swift in Sources */,
 				D310F4CA205F4D37005EF1BF /* CallbackW.swift in Sources */,
 				D310F4C8205F4130005EF1BF /* FunctionWrapperType.swift in Sources */,
+				D3A2B1CE2069C296002F720D /* FunctionFW.swift in Sources */,
 				D310F4DC205F56CD005EF1BF /* FailableCallbackW+Skip.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -579,6 +590,7 @@
 				D3EAEDD3205AE4CE0033CF62 /* SupplyWTest+Sync.swift in Sources */,
 				D318D723205ED97100CBD754 /* CallbackW+Filter.swift in Sources */,
 				D318D703205E718D00CBD754 /* CallbackWTest+Distinct.swift in Sources */,
+				D3A2B1D22069CFFF002F720D /* FunctionFWTest.swift in Sources */,
 				D318D70B205E9F1F00CBD754 /* FunctionWTest+Catch.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

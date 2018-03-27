@@ -16,27 +16,27 @@ public protocol FunctionWrapperConvertibleType {
 
 /// FunctionWrapperType represents a wrapper for a Function.
 public protocol FunctionWrapperType: FunctionWrapperConvertibleType {
-  var function: Function<T, R> { get }
+  var f: Function<T, R> { get }
 
   #if DEBUG
-    var description: String { get }
+  var description: String { get }
 
-    init(_ function: @escaping Function<T, R>, _ description: String)
+  init(_ f: @escaping Function<T, R>, _ description: String)
   #endif
 
-  init(_ function: @escaping Function<T, R>)
+  init(_ f: @escaping Function<T, R>)
 }
 
 public extension FunctionWrapperType {
   public func invoke(_ value: T) throws -> R {
-    return try function(value)
+    return try f(value)
   }
 }
 
 #if DEBUG
-  extension FunctionWrapperType {
-    func appendDescription(_ description: String) -> String {
-      return "\(self.description) - \(description)"
-    }
+extension FunctionWrapperType {
+  func appendDescription(_ description: String) -> String {
+    return "\(self.description) - \(description)"
   }
+}
 #endif

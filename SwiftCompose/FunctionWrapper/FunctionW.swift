@@ -34,22 +34,22 @@
 /// duplicate inputs, after which it feeds the result to filter, and finally
 /// to the wrapped callback.
 public struct FunctionW<T, R> {
-  public let function: Function<T, R>
+  public let f: Function<T, R>
 
   #if DEBUG
-    public let description: String
+  public let description: String
 
-    public init(_ f: @escaping Function<T, R>, _ description: String) {
-      self.function = f
-      self.description = description
-    }
+  public init(_ f: @escaping Function<T, R>, _ description: String) {
+    self.f = f
+    self.description = description
+  }
   #endif
 
   public init(_ f: @escaping Function<T, R>) {
-    self.function = f
+    self.f = f
 
     #if DEBUG
-      description = String(describing: FunctionW.self)
+    description = String(describing: FunctionW.self)
     #endif
   }
 }
@@ -63,5 +63,5 @@ extension FunctionW: FunctionWrapperConvertibleType {
 extension FunctionW: FunctionWrapperType {}
 
 #if DEBUG
-  extension FunctionW: CustomStringConvertible {}
+extension FunctionW: CustomStringConvertible {}
 #endif

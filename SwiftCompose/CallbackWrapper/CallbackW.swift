@@ -8,22 +8,22 @@
 
 /// Wrapper for a callback function.
 public struct CallbackW<T> {
-  public var function: Callback<T>
+  public var f: Callback<T>
 
   #if DEBUG
-    public let description: String
+  public let description: String
 
-    public init(_ callback: @escaping Callback<T>, _ description: String) {
-      self.description = description
-      self.function = callback
-    }
+  public init(_ callback: @escaping Callback<T>, _ description: String) {
+    self.description = description
+    self.f = callback
+  }
   #endif
 
   public init(_ callback: @escaping Callback<T>) {
-    self.function = callback
+    self.f = callback
 
     #if DEBUG
-      description = String(describing: CallbackW.self)
+    description = String(describing: CallbackW.self)
     #endif
   }
 }
@@ -31,9 +31,9 @@ public struct CallbackW<T> {
 extension CallbackW: FunctionWrapperConvertibleType {
   public func asFunctionWrapper() -> FunctionW<T, Void> {
     #if DEBUG
-      return FunctionW(function, description)
+    return FunctionW(f, description)
     #else
-      return FunctionW(function)
+    return FunctionW(f)
     #endif
   }
 }
@@ -47,7 +47,7 @@ extension CallbackW: CallbackWrapperConvertibleType {
 extension CallbackW: CallbackWrapperType {}
 
 #if DEBUG
-  extension CallbackW: CustomStringConvertible {}
+extension CallbackW: CustomStringConvertible {}
 #endif
 
 public extension FunctionW where R == Void {
@@ -57,9 +57,9 @@ public extension FunctionW where R == Void {
   /// - Returns: A CallbackW instance.
   public func asCallbackWrapper() -> CallbackW<T> {
     #if DEBUG
-      return CallbackW(function, description)
+    return CallbackW(f, description)
     #else
-      return CallbackW(function)
+    return CallbackW(f)
     #endif
   }
 }

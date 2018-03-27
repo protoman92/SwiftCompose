@@ -20,8 +20,8 @@ public extension FunctionWrapperType {
     })
 
     #if DEBUG
-      let description = appendDescription("Added mapArg")
-      return FunctionW(f1, description)
+    let description = appendDescription("Added mapArg")
+    return FunctionW(f1, description)
     #else
       return FunctionW(f1)
     #endif
@@ -35,10 +35,10 @@ public extension FunctionWrapperType {
     let f1: Function<T, R1> = ({try m(self.invoke($0))})
 
     #if DEBUG
-      let description = appendDescription("Added map")
-      return FunctionW(f1, description)
+    let description = appendDescription("Added map")
+    return FunctionW(f1, description)
     #else
-      return FunctionW(f1)
+    return FunctionW(f1)
     #endif
   }
 }

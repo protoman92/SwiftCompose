@@ -23,10 +23,10 @@ public extension FunctionWrapperType {
     })
 
     #if DEBUG
-      let description = "Added pairing with previous value"
-      return Self(function, description)
+    let description = "Added pairing with previous value"
+    return Self(function, description)
     #else
-      return Self(function)
+    return Self(function)
     #endif
   }
 }
